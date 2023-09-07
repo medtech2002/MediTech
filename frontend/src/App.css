@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+}
+
+/* --------------- Webkit Scrollbar --------------- */
+/* ::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #15140f;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #07afb4cb;
+  border-radius: 20px;
+  border: 6px solid transparent;
+} */
