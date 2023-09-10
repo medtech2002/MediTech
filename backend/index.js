@@ -19,7 +19,13 @@ const app = express();
 const server = http.createServer(app);
 
 // Import SocketIo
-const io = require('socket.io')(server); // Pass the http server to Socket.io
+const io = require('socket.io')(server, {
+    // It takes 60 seconds before off
+    pingTimeout: 60000,
+    cors: {
+        origin: "http://localhost:3000",
+    },
+}); // Pass the http server to Socket.io
 
 // Get the Port
 const port = process.env.PORT || 5000;
@@ -32,7 +38,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // Import User Type Router
-app.use("/api/persons",require("./Controller/userTypeController"));
+app.use("/api/persons", require("./Controller/userTypeController"));
+// Import Chat Router
+app.use("/api/chats", require("./Controller/chatController"));
 
 app.all("*", (req, res) => {
     res.status(404).send("`~` Page Not Found `~`");
@@ -41,12 +49,13 @@ app.all("*", (req, res) => {
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-    socket.on('disconnect', () => {
-        console.log('User disconnected');
+    socket.on("setup", (userData) => {
+        socket.join(userData._id);
+        socket.emit("connected");
     });
 
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg); // Broadcast the message to all connected clients
+    socket.on("joinchat", (room) => {
+        socket.join(room);
     });
 });
 

@@ -1,0 +1,128 @@
+.chatPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatPage .up {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(65deg, rgb(57, 198, 253), rgb(144, 101, 243));
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  top: 0px;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatPage .up .opUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatPage .down {
+  width: 100%;
+  height: 70px;
+  background-color: aliceblue;
+  bottom: 0px;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatPage .down form {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.chatPage .down .textmsg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.chatPage .down .textmsg input {
+  border-style: none;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  width: 90%;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+}
+
+.chatPage .down .textmsg input:focus {
+  outline: none;
+}
+
+.chatPage .chatBox {
+  width: 100%;
+  padding: 60px 15px 80px 15px;
+}
+
+.chatPage .chatBox .message {
+  /* Add overflow-y: auto; to enable scrolling for messages */
+  overflow-y: auto;
+  /* Add max-height to limit the height of the chat messages container */
+  max-height: calc(100vh - 160px); /* Adjust this value as needed */
+}
+
+.chatPage .chatBox .message ::-webkit-scrollbar {
+  display: none;
+}
+
+.chatPage .chatBox .message .chat {
+  display: flex;
+  height: fit-content;
+  width: 100%;
+}
+
+.chatPage .chatBox .message .chat .text {
+  max-width: 75%;
+  width: fit-content;
+  height: fit-content;
+  margin: 5px 0;
+  padding: 5px 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatPage .chatBox .message .chat .text .reply {
+  background-color: rgba(0, 0, 0, 0.411);
+  padding: 5px 10px;
+  height: fit-content;
+  border-left: 2px solid rgb(255, 196, 0);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatPage .chatBox .message .chat .text .reply span {
+  font-size: small;
+  color: rgb(255, 196, 0);
+}
