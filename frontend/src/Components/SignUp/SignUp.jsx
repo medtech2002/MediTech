@@ -25,26 +25,29 @@ function SignUp() {
       const handlePasswordChange = (event) => {
         setPassword(event.target.value);
       };
+
       const handleSignUp = async () => {
-        try {
-          // Make an HTTP POST request to your server
-          const response = await axios.post(`${baseUrl}/api/persons/register`, {
-            fullname,
-            email,
-            password,
-            userType,
-          });
-      
-          if (response.status === 201) {
+        if (!fullname || !email || !password) {
+          alert('Please fill in all required fields');
+          return;
+        }
+        axios.post(`${baseUrl}/api/persons/register`, {
+          fullname,
+          email,
+          password,
+          userType,
+        }).then((res)=>{
+          if (res.status === 201) {
             alert('Registration successful'); // You can use your preferred notification method here
             // Redirect to the login page or another appropriate page
           } else {
             alert('Registration failed'); // You can use your preferred notification method here
           }
-        } catch (error) {
+        }).catch((error)=>{
           console.error(error);
-          alert('Something went wrong'); // You can use your preferred notification method here
-        }
+          alert('Something went wrong'); 
+        })
+       
       };      
   return (
     <div style={{ background: '#F218AD', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
