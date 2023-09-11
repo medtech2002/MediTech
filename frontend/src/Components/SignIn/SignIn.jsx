@@ -29,15 +29,15 @@ function SignIn() {
   };
 
   const handleSignIn = async () => {
-    if ( !email || !password) {
-      alert('Please fill in all required fields');
+    if (!email || !password) {
+      alert("Please fill in all required fields");
       return;
     }
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (!emailRegex.test(email)) {
-          alert('Please enter a valid email address');
-          return;
-        }
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
     axios
       .post(`${baseUrl}/api/persons/login`, {
         email,
