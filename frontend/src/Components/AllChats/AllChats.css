@@ -1,0 +1,31 @@
+.allChats {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.allChats .userChats {
+  width: 50%;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Standard CSS to hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Standard CSS to hide scrollbar in Edge */
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.allChats .userChats::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in webkit-based browsers like Chrome and Safari */
+}
+
+.allChats .msgChats {
+  width: 50%;
+  height: 100vh;
+  background-color: rgb(15, 79, 134);
+}

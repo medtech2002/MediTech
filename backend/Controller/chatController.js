@@ -265,5 +265,51 @@ router.delete("/del-message/:id", auth, async (req, res) => {
     }
 })
 
+// Get All Chats API
+router.get("/all-chats/:id", auth, async (req, res) => {
+    try {
+        // If the user id and params id match
+        if (req.user.id === req.params.id) {
+            // Take the user id from params id
+            const user_id = req.params.id;
+
+            //  Find all Chats
+            const chats = await Chat.find();
+
+            //  All User Chat Empty Array
+            let allUserChat = [];
+
+            // Iterating Chats Array
+            chats.forEach((c) => {
+                // Check the Current User is present or not in the Array
+                const userChat = c.userchat.find((u) => u.user_id.toString() === user_id);
+                // If Present
+                if (userChat) {
+                    // Take details of the Oponent User
+                    const otherUserChat = c.userchat.filter((u) => u.user_id.toString() !== user_id);
+                    // Take details of the Oponent User First Array
+                    const opChat=otherUserChat[0];
+                    //   Push into the Chat
+                    allUserChat.push(
+                        {
+                            chat_id: c._id,
+                            opChat
+                        }
+                    );
+                }
+            });
+            // Set Ok Status and send the Chat Details
+            res.status(200).json(allUserChat);
+        } else {
+            // Set Internal Server Error Status
+            return res.status(500).send("You can only view your own account !!");
+        }
+    } catch (error) {
+        // console.log(error);
+        // Set Internal Server Error Status
+        return res.status(500).send("Server Error !!");
+    }
+})
+
 // Exports the Router
 module.exports = router;
