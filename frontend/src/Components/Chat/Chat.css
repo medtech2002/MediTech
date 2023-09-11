@@ -1,8 +1,8 @@
 .chatPage {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
@@ -14,7 +14,7 @@
   background: linear-gradient(65deg, rgb(57, 198, 253), rgb(144, 101, 243));
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   top: 0px;
-  position: fixed;
+  /* position: fixed; */
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -32,7 +32,7 @@
   height: 70px;
   background-color: aliceblue;
   bottom: 0px;
-  position: fixed;
+  /* position: fixed; */
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -76,14 +76,20 @@
 
 .chatPage .chatBox {
   width: 100%;
-  padding: 60px 15px 80px 15px;
+  height: 100vh;
+  padding: 0 10px;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  /* flex-direction: column; */
 }
 
 .chatPage .chatBox .message {
+  width: 100%;
   /* Add overflow-y: auto; to enable scrolling for messages */
   overflow-y: auto;
   /* Add max-height to limit the height of the chat messages container */
-  max-height: calc(100vh - 160px); /* Adjust this value as needed */
+  max-height: calc(100vh - 120px); /* Adjust this value as needed */
 }
 
 .chatPage .chatBox .message ::-webkit-scrollbar {
@@ -102,9 +108,7 @@
   height: fit-content;
   margin: 5px 0;
   padding: 5px 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   color: white;
   font-weight: 400;
   letter-spacing: 0.5px;

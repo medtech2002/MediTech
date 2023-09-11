@@ -33,7 +33,10 @@ import EmojiPicker from "emoji-picker-react";
 import CryptoJS from "crypto-js";
 
 /* ------------- MUI Component ------------- */
+// Avatar
 import { Avatar } from "@mui/material";
+// Circular Progress
+import CircularProgress from "@mui/material/CircularProgress";
 
 /* ------------- MUI Icons ------------- */
 // Camera Icon
@@ -53,20 +56,24 @@ import ReplyIcon from "@mui/icons-material/Reply";
 // Block Icon
 import BlockIcon from "@mui/icons-material/Block";
 
-const Chat = () => {
+const Chat = (props) => {
   // Chats UseSate
   const [chats, setChats] = useState();
   // Oponent User UseState
   const [opuser, setOpuser] = useState();
   // Chat Id UseState
-  const [chatId, setChatId] = useState("64fc64d4e4a0dcfba88c0600");
+  const [chatId, setChatId] = useState();
   // Person Id
-  const [personId, setPersonId] = useState("64f9e8a1c77cb6936419d54c");
+  const [personId, setPersonId] = useState();
   // User Type
-  const [userType, setUserType] = useState("user");
+  const [userType, setUserType] = useState();
 
   // UseEffect for Loading Chats and also create chats
   useEffect(() => {
+    setChatId(props.data.chat_id);
+    setPersonId(props.data.person_id);
+    setUserType(props.data.user_type);
+
     // Take the Token and Userid and UserType
     const token = Cookies.get("token");
     const userid = Cookies.get("userid");
@@ -79,7 +86,7 @@ const Chat = () => {
     };
 
     // If token and userid present
-    if (token && userid) {
+    if (token && userid && chatId && personId && userType) {
       // Axios Post Request to Backend
       axios
         .post(`${baseUrl}/api/chats/chat-start/${userid}`, val, {
@@ -106,7 +113,14 @@ const Chat = () => {
           // console.log(err);
         });
     }
-  }, [chatId, personId, userType]);
+  }, [
+    chatId,
+    personId,
+    props.data.chat_id,
+    props.data.person_id,
+    props.data.user_type,
+    userType,
+  ]);
 
   // Message UseState
   const [msg, setMsg] = useState("");
@@ -258,6 +272,9 @@ const Chat = () => {
           <div className="message">
             {/* Scrollable Feed */}
             <ScrollableFeed>
+              {/* {!chats ? <CircularProgress sx={{
+                alignSelf:"center"
+              }}/> : ""} */}
               {/* If Chats are Present */}
               {chats &&
                 chats.length !== 0 &&
