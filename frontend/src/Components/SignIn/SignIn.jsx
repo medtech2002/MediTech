@@ -1,39 +1,36 @@
 import React,{useState} from 'react';
+import {Link} from 'react-router-dom'
 import { Typography, Container, Paper, Grid, TextField, Button, Avatar, CssBaseline,FormControl,InputLabel
 ,Select,MenuItem } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Logo from '../Logo/MediTech Logo.png';
+import Logo from '../../Logo/MediTech Logo.png';
 import axios from 'axios';
-import { baseUrl } from '../Helper/BaseUrl';
+import  baseUrl  from '../../Helper/BaseUrl';
+import cookies from 'js-cookie'
 function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userType, setUserType] = useState('user'); // Initialize the user type state
-
+  
   const handleUserTypeChange = (event) => {
     setUserType(event.target.value);
   };
 
   const handleSignIn = async () => {
-    try {
-      // Make an HTTP POST request to your server
-      const response = await axios.post(`${baseUrl}/api/persons/login`, {
-        email,
-        password,
-        userType,
-      });
-
-      if (response.data.success) {
-        localStorage.setItem('token', response.data.token);
-        alert('Login successfully'); // You can use your preferred notification method here
-        // Redirect to the desired page
-      } else {
-        alert(response.data.message); // You can use your preferred notification method here
-      }
-    } catch (error) {
+    axios.post(`${baseUrl}/api/persons/login`, {
+      email,
+      password,
+      userType,
+    }).then((res)=>{
+      cookies.set('token', res.data.token);
+      cookies.set('userid',res.data.userid);
+      cookies.set('type',res.data.type);
+      alert('Login successfully');
+    }).catch((error)=>{
       console.error(error);
-      alert('Something went wrong'); // You can use your preferred notification method here
-    }
+      alert('Something went wrong');
+    })
+    
   };
 
   return (
@@ -105,6 +102,7 @@ function SignIn() {
               >
                 Log in
               </Button>
+              <Link to="/signup" className='m-2'>Not a User Register Here</Link>
             </Grid>
           </Grid>
         </Paper>
