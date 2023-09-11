@@ -114,6 +114,14 @@
   letter-spacing: 0.5px;
   display: flex;
   flex-direction: column;
+  word-wrap: break-word;
+}
+
+.chatPage .chatBox .message .chat .text span{
+  max-width: 100%;
+  width: fit-content;
+  height: fit-content;
+  white-space: normal;
 }
 
 .chatPage .chatBox .message .chat .text .reply {

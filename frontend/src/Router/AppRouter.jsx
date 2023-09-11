@@ -20,6 +20,7 @@ const AppRouter = () => {
     <>
       <Router>
         <Routes>
+          {/* Home Route */}
           <Route exact path="/" element={<Home />} />
         </Routes>
         <Routes>

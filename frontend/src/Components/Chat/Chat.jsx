@@ -201,7 +201,7 @@ const Chat = (props) => {
 
   // BorderRadius and Style for Chats for different user
   const styleBorderradius = (cuid, del) => {
-    // For Current User
+    // For given User
     if (cuid === Cookies.get("userid")) {
       return {
         borderTopRightRadius: "5px",
@@ -222,6 +222,50 @@ const Chat = (props) => {
       background: "linear-gradient(65deg, rgb(182, 4, 64), rgb(230, 4, 154))",
       opacity: del ? 0.3 : 1,
     };
+  };
+
+  const convertTime = (t) => {
+    // Create a new Date object using the timestamp
+    const givenDate = new Date(t);
+
+    // Format the time as a string
+    const formattedTime = givenDate.toLocaleTimeString(); // This will use the user's locale for formatting
+
+    const newTime = formattedTime.split(":");
+
+    return `${newTime[0]}:${newTime[1]} ${newTime[2].substring(3)}`;
+  };
+
+  const checkDate = (pd, nd) => {
+    // Create a new Date object using the timestamp
+    const givenDate = new Date(pd);
+
+    const currentDate = new Date(nd);
+
+    if (
+      currentDate.getDate() === givenDate.getDate() &&
+      currentDate.getMonth() === givenDate.getMonth() &&
+      currentDate.getFullYear() === givenDate.getFullYear()
+    ) {
+      return;
+    }
+    return (
+      <p
+        style={{
+          textAlign: "center",
+          margin: "10px auto",
+          padding: "5px",
+          backgroundColor: "rgba(0, 0, 0, 0.733)",
+          color: "white",
+          width: "fit-content",
+          borderRadius: "5px",
+          letterSpacing: "0.5px",
+        }}
+      >
+        ---- {givenDate.getDate()}/{givenDate.getMonth() + 1}/
+        {givenDate.getFullYear()} ----
+      </p>
+    );
   };
 
   return (
@@ -278,116 +322,165 @@ const Chat = (props) => {
               {/* If Chats are Present */}
               {chats &&
                 chats.length !== 0 &&
-                chats.map((c) => {
+                chats.map((c, i) => {
                   return (
-                    // Per Chat Box
-                    <div
-                      className="chat"
-                      key={c._id}
-                      style={{
-                        justifyContent:
-                          c.sender_id === Cookies.get("userid")
-                            ? "flex-end"
-                            : "flex-start",
-                      }}
-                    >
-                      {/* If the User is Current User then Show Delete & Reply Icon for Current User Own Chat */}
-                      {!c.isDelete && c.sender_id === Cookies.get("userid") ? (
-                        <>
-                          {/* Delete Icon */}
-                          <DeleteIcon
-                            sx={{
-                              m: 1,
-                              opacity: 0.5,
-                              color: "grey",
-                              cursor: "pointer",
-                              "&:hover": {
-                                opacity: 1,
-                              },
-                            }}
-                            onClick={() => handleMsgDelete(c._id, c.sender_id)}
-                          />
-                          {/* Reply Icon */}
-                          <ReplyIcon
-                            sx={{
-                              m: 1,
-                              opacity: 0.5,
-                              color: "grey",
-                              cursor: "pointer",
-                              "&:hover": {
-                                opacity: 1,
-                              },
-                            }}
-                          />
-                        </>
+                    <>
+                      {i === 0 ? (
+                        <p
+                          style={{
+                            textAlign: "center",
+                            margin: "10px auto",
+                            padding: "5px",
+                            backgroundColor: "rgba(0, 0, 0, 0.733)",
+                            color: "white",
+                            width: "fit-content",
+                            borderRadius: "5px",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          ---- {new Date(c.createdAt).getDate()}/
+                          {new Date(c.createdAt).getMonth() + 1}/
+                          {new Date(c.createdAt).getFullYear()} ----
+                        </p>
                       ) : (
-                        ""
+                        checkDate(chats[i - 1].createdAt, c.createdAt)
                       )}
-                      {/* Inner Chat Text Box */}
+
+                      {/* Per Chat Box */}
                       <div
-                        className="text"
-                        style={styleBorderradius(c.sender_id, c.isDelete)}
+                        className="chat"
+                        key={c._id}
+                        style={{
+                          justifyContent:
+                            c.sender_id === Cookies.get("userid")
+                              ? "flex-end"
+                              : "flex-start",
+                        }}
                       >
-                        {/* If Reply is Present */}
-                        {c.reply && !c.isDelete && (
-                          // Reply Box
-                          <span className="reply">
-                            {/* If Reply text is Current User then show You other wise show Oponent User Name*/}
-                            <span>
-                              {c.reply_id === Cookies.get("userid")
-                                ? "You"
-                                : opuser[0].fullname}
-                            </span>
-                            {/* Reply Content */}
-                            {c.reply}
-                          </span>
+                        {/* If the User is given User then Show Delete & Reply Icon for given User Own Chat */}
+                        {!c.isDelete &&
+                        c.sender_id === Cookies.get("userid") ? (
+                          <>
+                            {/* Delete Icon */}
+                            <DeleteIcon
+                              sx={{
+                                m: 1,
+                                opacity: 0.5,
+                                color: "grey",
+                                cursor: "pointer",
+                                "&:hover": {
+                                  opacity: 1,
+                                },
+                              }}
+                              onClick={() =>
+                                handleMsgDelete(c._id, c.sender_id)
+                              }
+                            />
+                            {/* Reply Icon */}
+                            <ReplyIcon
+                              sx={{
+                                m: 1,
+                                opacity: 0.5,
+                                color: "grey",
+                                cursor: "pointer",
+                                "&:hover": {
+                                  opacity: 1,
+                                },
+                              }}
+                            />
+                          </>
+                        ) : (
+                          ""
                         )}
-                        {/* Main Message Content */}
-                        <span>
-                          {/* If the message was deleted */}
-                          {c.isDelete ? (
-                            <>
-                              {/* Set Block Icon */}
-                              <BlockIcon
-                                sx={{
-                                  color: "white",
-                                  mr: 1,
-                                }}
-                              />
-                              {/* If it is current user */}
-                              {c.sender_id === Cookies.get("userid") ? (
-                                <>You deleted the message</>
-                              ) : (
-                                // If it is oponent user
-                                <>This message was deleted</>
-                              )}
-                            </>
-                          ) : (
-                            // Otherwise show main content
-                            <>{c.content}</>
+                        {/* Inner Chat Text Box */}
+                        <div
+                          className="text"
+                          style={styleBorderradius(c.sender_id, c.isDelete)}
+                        >
+                          {/* If Reply is Present */}
+                          {c.reply && !c.isDelete && (
+                            // Reply Box
+                            <span className="reply">
+                              {/* If Reply text is given User then show You other wise show Oponent User Name*/}
+                              <span>
+                                {c.reply_id === Cookies.get("userid")
+                                  ? "You"
+                                  : opuser[0].fullname}
+                              </span>
+                              {/* Reply Content */}
+                              {c.reply}
+                            </span>
                           )}
-                        </span>
+                          {/* Main Message Content */}
+                          <span>
+                            {/* If the message was deleted */}
+                            {c.isDelete ? (
+                              <>
+                                {/* Set Block Icon */}
+                                <BlockIcon
+                                  sx={{
+                                    color: "white",
+                                    mr: 1,
+                                  }}
+                                />
+                                {/* If it is given user */}
+                                {c.sender_id === Cookies.get("userid") ? (
+                                  <i>You deleted this message</i>
+                                ) : (
+                                  // If it is oponent user
+                                  <i>This message was deleted</i>
+                                )}
+                              </>
+                            ) : (
+                              // Otherwise show main content
+                              <>
+                                <span
+                                  style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                  }}
+                                >
+                                  {c.content}
+                                  <span
+                                    style={{
+                                      alignSelf:
+                                        c.sender_id === Cookies.get("userid")
+                                          ? "flex-end"
+                                          : "flex-start",
+                                      fontSize: "11.5px",
+                                      color: "rgb(255, 196, 0)",
+                                      margin: "2px 0",
+                                    }}
+                                  >
+                                    {convertTime(c.createdAt)}
+                                  </span>
+                                </span>
+                              </>
+                            )}
+                          </span>
+                        </div>
+                        {/* If the User is Oponent User then Reply Icon for Oponent User Chat */}
+                        {!c.isDelete &&
+                        c.sender_id !== Cookies.get("userid") ? (
+                          <>
+                            {/* Reply Icon */}
+                            <ReplyIcon
+                              sx={{
+                                m: 1,
+                                opacity: 0.5,
+                                color: "grey",
+                                cursor: "pointer",
+                                "&:hover": {
+                                  opacity: 1,
+                                },
+                              }}
+                            />
+                          </>
+                        ) : (
+                          ""
+                        )}
                       </div>
-                      {/* If the User is Oponent User then Reply Icon for Oponent User Chat */}
-                      {!c.isDelete && c.sender_id !== Cookies.get("userid") ? (
-                        <>
-                          {/* Reply Icon */}
-                          <ReplyIcon
-                            sx={{
-                              m: 1,
-                              opacity: 0.5,
-                              color: "grey",
-                              cursor: "pointer",
-                              "&:hover": {
-                                opacity: 1,
-                              },
-                            }}
-                          />
-                        </>
-                      ) : (
-                        ""
-                      )}
-                    </div>
+                    </>
                   );
                 })}
             </ScrollableFeed>
