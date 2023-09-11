@@ -6,6 +6,13 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 /* ------------- Components ------------- */
+// Home Page
+import Home from "../Components/Home/Home";
+// Sign Up Page
+import SignUp from "../Components/SignUp/SignUp";
+// Sign In Page
+import SignIn from "../Components/SignIn/SignIn";
+// All Chats Page
 import AllChats from "../Components/AllChats/AllChats";
 
 const AppRouter = () => {
@@ -13,7 +20,16 @@ const AppRouter = () => {
     <>
       <Router>
         <Routes>
-          {/* <Route exact path="/allchats" element={<AllChats />} /> */}
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/signup" element={<SignUp />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/signin" element={<SignIn />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/allchats" element={<AllChats />} />
         </Routes>
       </Router>
     </>
