@@ -20,44 +20,77 @@ import Logo from "../../Logo/MediTech Logo.png";
 import baseUrl from "../../Helper/BaseUrl";
 import axios from "axios";
 function SignUp() {
-  const navigate = useNavigate();
+    const [fullname, setFullname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [userType, setUserType] = useState('user');
+    const [passwordValidationMessage, setPasswordValidationMessage] = useState('');
+    const handleUserTypeChange = (event) => {
+        setUserType(event.target.value);
+      };
+      
+      const handleFullnameChange = (event) => {
+        setFullname(event.target.value);
+      };
+      
+      const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+      };
+      
+      const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+      };
 
-  const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("user");
-  const handleUserTypeChange = (event) => {
-    setUserType(event.target.value);
-  };
+      const handleSignUp = async () => {
+        if (!fullname || !email || !password) {
+          alert('Please fill in all required fields');
+          return;
+        }
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-  const handleFullnameChange = (event) => {
-    setFullname(event.target.value);
-  };
+        // Check if the email matches the regex
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address');
+          return;
+        }
+        const passwordLengthRegex = /^.{8,}$/;
+         const uppercaseLetterRegex = /[A-Z]/;
+        const lowercaseLetterRegex = /[a-z]/;
+         const numericCharacterRegex = /[0-9]/;
+        const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+  if (
+    !passwordLengthRegex.test(password) ||
+    !uppercaseLetterRegex.test(password) ||
+    !lowercaseLetterRegex.test(password) ||
+    !numericCharacterRegex.test(password) ||
+    !specialCharacterRegex.test(password)
+  ) {
+    setPasswordValidationMessage(
+      'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one numeric character, and one special character (!@#$%^&*()_+{}[]:;<>,.?~-)'
+    );
+    return;
+  }
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-  const handleSignUp = async () => {
-    axios
-      .post(`${baseUrl}/api/persons/register`, {
-        fullname,
-        email,
-        password,
-        userType,
-      })
-      .then((res) => {
-        alert("Registration successful");
-        navigate("/signin");
-      })
-      .catch((err) => {
-        alert("Something went wrong");
-      });
-  };
-
+  // If the password meets the criteria, reset the validation message
+  setPasswordValidationMessage('');
+        axios.post(`${baseUrl}/api/persons/register`, {
+          fullname,
+          email,
+          password,
+          userType,
+        }).then((res)=>{
+          if (res.status === 201) {
+            alert('Registration successful'); // You can use your preferred notification method here
+            // Redirect to the login page or another appropriate page
+          } else {
+            alert('Registration failed'); // You can use your preferred notification method here
+          }
+        }).catch((error)=>{
+          console.error(error);
+          alert('Something went wrong'); 
+        })
+       
+      };      
   return (
     <div
       style={{
@@ -139,6 +172,8 @@ function SignUp() {
                   required
                   value={password}
                   onChange={handlePasswordChange}
+                  error={passwordValidationMessage !== ''}
+                  helperText={passwordValidationMessage}
                 />
               </form>
             </Grid>
@@ -166,6 +201,7 @@ function SignUp() {
                 color="primary"
                 type="submit"
                 onClick={handleSignUp}
+
               >
                 Sign Up
               </Button>
