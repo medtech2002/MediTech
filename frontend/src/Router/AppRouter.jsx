@@ -3,7 +3,7 @@ import React from "react";
 
 /* ------------- React Router Dom ------------- */
 // Import Router,Route,Routes
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-dom";
 
 /* ------------- Components ------------- */
 // Home Page
@@ -14,8 +14,21 @@ import SignUp from "../Components/SignUp/SignUp";
 import SignIn from "../Components/SignIn/SignIn";
 // All Chats Page
 import AllChats from "../Components/AllChats/AllChats";
+//AddMedicine
+import AddMedicine from "../Components/AddMedicine/AddMedicine";
 
+// Define a custom PrivateRoute component
+function PrivateRoute({ element, userType }) {
+  if (userType === "admin") {
+    return element;
+  } else {
+    // Redirect to the SignIn page if the user is not an admin
+    return <Navigate to="/signin" />;
+  }
+}
 const AppRouter = () => {
+  const userType = "admin";
+
   return (
     <>
       <Router>
@@ -31,6 +44,12 @@ const AppRouter = () => {
         </Routes>
         <Routes>
           <Route exact path="/allchats" element={<AllChats />} />
+        </Routes>
+        <Routes>
+        <Route
+          path="/addmedicine"
+          element={<PrivateRoute element={<AddMedicine />} userType={userType} />}
+        />
         </Routes>
       </Router>
     </>
