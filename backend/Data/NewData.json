@@ -1,0 +1,1696 @@
+[
+    {
+        "DiseaseName": "Common Cold",
+        "Symptoms": [
+            "Fever",
+            "Runny Nose",
+            "Sneezing",
+            "Sore Throat"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Over-the-counter cold medicine",
+                    "Rest",
+                    "Hydration"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Antihistamines",
+                    "Decongestants",
+                    "Pain relievers"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Prescription antiviral drugs (in severe cases)",
+                    "Symptomatic treatment"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Consult a healthcare professional for prolonged symptoms"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Influenza (Flu)",
+        "Symptoms": [
+            "Fever",
+            "Cough",
+            "Body Aches",
+            "Fatigue"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antiviral medications (if caught early)",
+                    "Rest",
+                    "Fluids"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Pain relievers",
+                    "Decongestants",
+                    "Cough suppressants"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Consult a healthcare professional for persistent symptoms"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Reevaluation and follow-up with a doctor"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "COVID-19",
+        "Symptoms": [
+            "Fever",
+            "Cough",
+            "Shortness of Breath",
+            "Loss of Taste/Smell"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Isolation and rest",
+                    "Symptomatic treatment"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Antipyretics (fever reducers)",
+                    "Hydration",
+                    "Consult a healthcare professional if severe"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Prescription medications (in severe cases)",
+                    "Oxygen therapy"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up with healthcare provider for ongoing symptoms"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Malaria",
+        "Symptoms": [
+            "Fever",
+            "Chills",
+            "Headache",
+            "Sweating"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antimalarial drugs",
+                    "Rest",
+                    "Hydration"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continued antimalarial treatment",
+                    "Symptomatic relief"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Consult a healthcare professional for prolonged symptoms"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up for potential relapses"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Dengue Fever",
+        "Symptoms": [
+            "High Fever",
+            "Severe Headache",
+            "Joint and Muscle Pain",
+            "Skin Rash"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Pain relievers",
+                    "Rest",
+                    "Hydration"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Symptomatic treatment",
+                    "Monitoring for severe symptoms"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Hospitalization and fluid replacement (in severe cases)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up care and monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Typhoid Fever",
+        "Symptoms": [
+            "Sustained High Fever",
+            "Weakness",
+            "Abdominal Pain",
+            "Headache"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antibiotics",
+                    "Rest",
+                    "Hydration"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continued antibiotic treatment",
+                    "Symptomatic relief"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Hospitalization and intravenous (IV) fluids (in severe cases)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up for complete recovery"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Rocky Mountain Spotted Fever",
+        "Symptoms": [
+            "Fever",
+            "Rash",
+            "Headache",
+            "Nausea"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antibiotics (doxycycline)",
+                    "Rest",
+                    "Hydration"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continued antibiotic treatment",
+                    "Symptomatic relief"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Consult a healthcare professional for prolonged symptoms"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up for potential complications"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Tuberculosis (TB)",
+        "Symptoms": [
+            "Fever",
+            "Cough",
+            "Weight Loss",
+            "Night Sweats"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antibiotics for TB",
+                    "Rest",
+                    "Nutritional support"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continued antibiotic treatment",
+                    "Monitoring"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Consult a healthcare professional for treatment adjustments"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Long-term TB therapy and follow-up"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Pneumonia",
+        "Symptoms": [
+            "Cough",
+            "Fever",
+            "Shortness of Breath",
+            "Chest Pain"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antibiotics",
+                    "Rest",
+                    "Oxygen therapy (if necessary)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continued antibiotic treatment",
+                    "Monitoring"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Consult a healthcare professional for complications"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up for complete recovery"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Bronchitis",
+        "Symptoms": [
+            "Cough (with mucus)",
+            "Wheezing",
+            "Chest Discomfort",
+            "Fatigue"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Rest",
+                    "Hydration",
+                    "Cough suppressants"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Bronchodilators",
+                    "Pain relievers"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Consult a healthcare professional for persistent symptoms"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up for potential complications"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Chronic Obstructive Pulmonary Disease (COPD)",
+        "Symptoms": [
+            "Chronic Cough",
+            "Shortness of Breath",
+            "Wheezing",
+            "Chest Tightness"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Ongoing",
+                "Medicines": [
+                    "Bronchodilators",
+                    "Inhaled steroids",
+                    "Oxygen therapy (in severe cases)"
+                ]
+            },
+            {
+                "DurationName": "Regular management",
+                "Medicines": [
+                    "Lifestyle changes",
+                    "Pulmonary rehabilitation"
+                ]
+            },
+            {
+                "DurationName": "Flare-ups",
+                "Medicines": [
+                    "Oral steroids",
+                    "Antibiotics (for infections)"
+                ]
+            },
+            {
+                "DurationName": "Regular follow-up",
+                "Medicines": [
+                    "Consultations with a pulmonologist"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Asthma",
+        "Symptoms": [
+            "Cough (often at night or early morning)",
+            "Wheezing",
+            "Shortness of Breath",
+            "Chest Tightness"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Ongoing",
+                "Medicines": [
+                    "Bronchodilators",
+                    "Inhaled corticosteroids",
+                    "Allergy management"
+                ]
+            },
+            {
+                "DurationName": "Regular management",
+                "Medicines": [
+                    "Asthma action plan",
+                    "Lifestyle changes"
+                ]
+            },
+            {
+                "DurationName": "Flare-ups",
+                "Medicines": [
+                    "Oral steroids",
+                    "Quick-relief inhalers"
+                ]
+            },
+            {
+                "DurationName": "Regular follow-up",
+                "Medicines": [
+                    "Consultations with an allergist or pulmonologist"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Lung Cancer",
+        "Symptoms": [
+            "Persistent Cough",
+            "Coughing up Blood",
+            "Weight Loss",
+            "Chest Pain"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Varies by stage",
+                "Medicines": [
+                    "Surgery",
+                    "Chemotherapy",
+                    "Radiation therapy"
+                ]
+            },
+            {
+                "DurationName": "Lifelong monitoring",
+                "Medicines": [
+                    "Follow-up appointments",
+                    "Palliative care (for advanced stages)"
+                ]
+            },
+            {
+                "DurationName": "Palliative care",
+                "Medicines": [
+                    "Pain management",
+                    "Supportive care"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Cystic Fibrosis",
+        "Symptoms": [
+            "Chronic Cough",
+            "Thick Mucus",
+            "Frequent Lung Infections",
+            "Shortness of Breath"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Ongoing",
+                "Medicines": [
+                    "Airway clearance techniques",
+                    "Inhaled medications",
+                    "Enzyme replacement therapy"
+                ]
+            },
+            {
+                "DurationName": "Regular management",
+                "Medicines": [
+                    "Nutritional support",
+                    "Lifestyle changes"
+                ]
+            },
+            {
+                "DurationName": "Flare-ups",
+                "Medicines": [
+                    "Antibiotics",
+                    "Intravenous (IV) therapy"
+                ]
+            },
+            {
+                "DurationName": "Regular follow-up",
+                "Medicines": [
+                    "Consultations with a pulmonologist",
+                    "Genetic counseling"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Interstitial Lung Disease (ILD)",
+        "Symptoms": [
+            "Persistent Dry Cough",
+            "Shortness of Breath",
+            "Fatigue",
+            "Weight Loss"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Varies by type",
+                "Medicines": [
+                    "Corticosteroids",
+                    "Immunosuppressants",
+                    "Oxygen therapy (if necessary)"
+                ]
+            },
+            {
+                "DurationName": "Regular management",
+                "Medicines": [
+                    "Lifestyle changes",
+                    "Pulmonary rehabilitation"
+                ]
+            },
+            {
+                "DurationName": "Regular follow-up",
+                "Medicines": [
+                    "Consultations with a pulmonologist"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Whooping Cough (Pertussis)",
+        "Symptoms": [
+            "Severe Coughing Fits",
+            "Coughing with a 'Whoop' Sound",
+            "Vomiting After Coughing",
+            "Fatigue"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Varies, but can be weeks",
+                "Medicines": [
+                    "Antibiotics (early treatment is crucial)",
+                    "Rest",
+                    "Hydration"
+                ]
+            },
+            {
+                "DurationName": "Regular monitoring",
+                "Medicines": [
+                    "Follow-up appointments",
+                    "Vaccination for prevention"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Laryngitis",
+        "Symptoms": [
+            "Hoarse Voice",
+            "Dry Cough",
+            "Sore Throat",
+            "Difficulty Swallowing"
+        ],
+        "Duration": [
+            {
+                "DurationName": "Varies, often short-lived",
+                "Medicines": [
+                    "Voice rest",
+                    "Hydration",
+                    "Throat lozenges"
+                ]
+            },
+            {
+                "DurationName": "Regular management",
+                "Medicines": [
+                    "Avoid irritants",
+                    "Speech therapy (if necessary)"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Hypertension (High Blood Pressure)",
+        "Symptoms": [
+            "Often asymptomatic",
+            "Headaches",
+            "Dizziness",
+            "Nosebleeds"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Lifestyle Modifications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Antihypertensive medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Ongoing monitoring"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular check-ups"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Hypertensive Crisis",
+        "Symptoms": [
+            "Severe headaches",
+            "Chest pain",
+            "Shortness of breath",
+            "Blurred vision"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Emergency Care"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continuation of treatment"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Monitoring"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Hypertensive Heart Disease",
+        "Symptoms": [
+            "Chest pain (angina)",
+            "Heart palpitations",
+            "Shortness of breath"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Continuation of treatment"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Monitoring"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular check-ups"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Stroke",
+        "Symptoms": [
+            "Sudden numbness or weakness",
+            "Severe headache",
+            "Trouble speaking or understanding speech"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Emergency treatment (thrombolytics)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Rehabilitation and secondary prevention"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Long-term blood pressure management"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Heart Attack (Myocardial Infarction)",
+        "Symptoms": [
+            "Chest pain or discomfort",
+            "Shortness of breath",
+            "Nausea or lightheadedness"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Emergency treatment (angioplasty)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Cardiac rehabilitation"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Long-term blood pressure control"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular check-ups"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Kidney Disease (Hypertensive Nephropathy)",
+        "Symptoms": [
+            "Fluid retention",
+            "Fatigue",
+            "High protein in urine (proteinuria)"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Blood pressure management"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Kidney function monitoring"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Dietary adjustments"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing kidney function monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Aneurysm",
+        "Symptoms": [
+            "Severe headache",
+            "Pain or discomfort",
+            "Pulsating mass in the abdomen (abdominal aneurysm)"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Surgery (for ruptured aneurysms)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Endovascular repair (stent grafting)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Blood pressure control"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Diabetic Retinopathy",
+        "Symptoms": [
+            "Blurred vision",
+            "Floaters",
+            "Vision loss"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Laser treatment for macular edema"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Intravitreal injections"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Vitrectomy (in severe cases)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular eye check-ups"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Diabetic Neuropathy",
+        "Symptoms": [
+            "Numbness",
+            "Tingling",
+            "Burning sensations in limbs"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Pain relievers"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Neuropathic pain medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Physical therapy"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle modifications"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Diabetic Nephropathy",
+        "Symptoms": [
+            "Swelling (edema)",
+            "High blood pressure",
+            "Protein in urine"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Angiotensin-converting enzyme (ACE) inhibitors"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Angiotensin II receptor blockers (ARBs)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Dialysis (in severe cases)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Kidney function monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Diabetic Foot Ulcers",
+        "Symptoms": [
+            "Open sores or wounds on feet",
+            "Infection",
+            "Pain"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Wound care and antibiotics"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Debridement (removal of dead tissue)"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Type 2 Diabetes",
+        "Symptoms": [
+            "Increased thirst",
+            "Frequent urination",
+            "Fatigue",
+            "Blurred vision"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Oral antidiabetic medications (e.g., metformin)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Insulin therapy (in some cases)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Lifestyle changes (diet and exercise)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular glucose monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Heart Disease",
+        "Symptoms": [
+            "Chest pain",
+            "Shortness of breath",
+            "Fatigue",
+            "Heart attack"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Cholesterol-lowering medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Blood pressure control"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Cardiac rehabilitation"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle changes and regular check-ups"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Sleep Apnea",
+        "Symptoms": [
+            "Loud snoring",
+            "Excessive daytime sleepiness",
+            "Morning headaches"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Continuous positive airway pressure (CPAP) therapy"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Weight loss and lifestyle changes"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Oral appliances (in some cases)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular follow-ups and adherence to therapy"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Osteoarthritis",
+        "Symptoms": [
+            "Joint pain",
+            "Stiffness",
+            "Reduced mobility"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Pain relievers"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Physical therapy"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Lifestyle modifications"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Joint health management"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Fatty Liver Disease (NAFLD/NASH)",
+        "Symptoms": [
+            "Fatigue",
+            "Abdominal discomfort",
+            "Jaundice (in advanced cases)"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Weight loss and lifestyle changes"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Management of risk factors (e.g., diabetes control)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Regular liver function tests"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Liver health monitoring"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Gallstones",
+        "Symptoms": [
+            "Abdominal pain (usually in the upper right abdomen)",
+            "Nausea",
+            "Vomiting"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Pain relief medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Gallbladder removal surgery (cholecystectomy)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Dietary changes (low-fat diet)"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Follow-up care and dietary maintenance"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Certain Cancers (e.g., Breast, Colon)",
+        "Symptoms": [
+            "Varies by cancer type",
+            "Lump in the breast (breast cancer)",
+            "Blood in stool (colon cancer)"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Varies by cancer type (e.g., chemotherapy, radiation therapy)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Surgical interventions (e.g., mastectomy, tumor removal)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Ongoing cancer treatments and follow-up"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Cancer surveillance and survivorship care"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Cardiovascular Disease",
+        "Symptoms": [
+            "Chest pain (angina)",
+            "Palpitations",
+            "Fatigue",
+            "Heart attack"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Cholesterol-lowering medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Blood pressure control"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Cardiac rehabilitation"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle changes and mental health support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Diabetes",
+        "Symptoms": [
+            "Frequent urination",
+            "Increased thirst",
+            "Fatigue",
+            "Blurred vision"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Oral antidiabetic medications (e.g., metformin)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Insulin therapy (in some cases)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Lifestyle changes and mental health support"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Regular glucose monitoring and mental health therapy"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Substance Abuse (e.g., Alcoholism, Drug Addiction)",
+        "Symptoms": [
+            "Cravings",
+            "Withdrawal symptoms",
+            "Social isolation"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Detoxification and symptom management"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Behavioral therapy and counseling"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Support groups and relapse prevention strategies"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing therapy and aftercare"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Obesity",
+        "Symptoms": [
+            "Weight gain",
+            "Increased risk of heart disease",
+            "Sleep apnea"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Dietary counseling and exercise guidance"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Behavioral therapy and mental health support"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Weight management programs"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle changes and ongoing mental health support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Anxiety Disorders",
+        "Symptoms": [
+            "Excessive worry",
+            "Restlessness",
+            "Panic attacks",
+            "Muscle tension"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antianxiety medications (e.g., benzodiazepines)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Cognitive-behavioral therapy (CBT)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Exposure therapy and support groups"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Maintenance therapy and ongoing mental health care"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Chronic Pain Conditions (e.g., Fibromyalgia, Chronic Fatigue Syndrome)",
+        "Symptoms": [
+            "Persistent pain",
+            "Fatigue",
+            "Sleep disturbances"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Pain medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Cognitive-behavioral therapy (CBT) for pain management"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Physical therapy and rehabilitation"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Long-term pain management and mental health support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Eating Disorders (e.g., Anorexia Nervosa, Bulimia Nervosa)",
+        "Symptoms": [
+            "Extreme weight loss (anorexia)",
+            "Binge eating and purging (bulimia)",
+            "Obsession with food and body image"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Medical stabilization and nutritional therapy"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Individual and group therapy (e.g., cognitive-behavioral therapy)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Inpatient or outpatient treatment programs"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing therapy and support for recovery"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Alzheimer's Disease",
+        "Symptoms": [
+            "Memory loss",
+            "Cognitive decline",
+            "Behavioral changes"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Medications to manage symptoms"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Counseling and support for caregivers"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Memory care and cognitive therapies"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing care and support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Rheumatoid Arthritis",
+        "Symptoms": [
+            "Joint pain and stiffness",
+            "Swelling",
+            "Fatigue"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Anti-inflammatory medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Disease-modifying antirheumatic drugs (DMARDs)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Physical therapy and joint protection techniques"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Long-term management and emotional support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Cancer (various types)",
+        "Symptoms": [
+            "Varies by cancer type",
+            "Fatigue",
+            "Emotional distress"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Cancer-specific treatments (e.g., surgery, chemotherapy)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Pain and symptom management"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Emotional and psychological support"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Ongoing cancer care and mental health support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Gastrointestinal Disorders (e.g., Irritable Bowel Syndrome)",
+        "Symptoms": [
+            "Abdominal pain",
+            "Diarrhea",
+            "Bloating",
+            "Constipation"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antispasmodic medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Dietary changes and fiber supplements"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Stress reduction techniques and anxiety therapy"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle changes and ongoing anxiety management"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Respiratory Conditions (e.g., Asthma)",
+        "Symptoms": [
+            "Coughing",
+            "Wheezing",
+            "Shortness of breath",
+            "Chest tightness"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Bronchodilators and inhaled corticosteroids"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Allergy management and avoidance of triggers"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Anxiety reduction techniques and stress management"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle changes and ongoing anxiety therapy"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Immune System Dysfunction",
+        "Symptoms": [
+            "Frequent infections",
+            "Chronic inflammation",
+            "Fatigue",
+            "Autoimmune conditions"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Immunosuppressive medications (in some cases)"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Management of underlying autoimmune conditions"
+                ]
+            },
+            {
+                "DurationName": "3 days to 3 weeks",
+                "Medicines": [
+                    "Stress reduction techniques and anxiety therapy"
+                ]
+            },
+            {
+                "DurationName": "1 month",
+                "Medicines": [
+                    "Lifestyle changes and ongoing immune system support"
+                ]
+            }
+        ]
+    },
+    {
+        "DiseaseName": "Mental Health Disorders (e.g., Depression)",
+        "Symptoms": [
+            "Low mood",
+            "Loss of interest",
+            "Fatigue",
+            "Hopelessness"
+        ],
+        "Duration": [
+            {
+                "DurationName": "3 days to 1 week",
+                "Medicines": [
+                    "Antidepressant medications"
+                ]
+            },
+            {
+                "DurationName": "3 days to 2 weeks",
+                "Medicines": [
+                    "Cognitive-behavioral therapy (CBT)"
+                ]
+            }
+        ]
+    }
+]

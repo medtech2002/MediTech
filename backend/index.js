@@ -41,6 +41,10 @@ app.use(cors());
 app.use("/api/persons", require("./Controller/userTypeController"));
 // Import Chat Router
 app.use("/api/chats", require("./Controller/chatController"));
+// Import Symptom Router
+app.use("/api/symptoms", require("./Controller/symptomController"));
+// Import Medicine Router
+app.use("/api/medicines", require("./Controller/medicineController"));
 
 app.all("*", (req, res) => {
     res.status(404).send("`~` Page Not Found `~`");
@@ -49,14 +53,29 @@ app.all("*", (req, res) => {
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-    socket.on("setup", (userData) => {
-        socket.join(userData._id);
+    socket.on("setup", (userid) => {
+        socket.join(userid);
+        console.log("User Id : " + userid);
         socket.emit("connected");
     });
 
-    socket.on("joinchat", (room) => {
-        socket.join(room);
+    socket.on("joinchat", (roomid) => {
+        socket.join(roomid);
+        console.log("User Join Room : " + roomid);
     });
+
+    socket.on("typing",(room)=>socket.in(room).emit("typing"));
+    socket.on("stoptyping",(room)=>socket.in(room).emit("stoptyping"));
+
+    socket.on("newmessage",(newMsgReceived)=>{
+        let chat=newMsgReceived.userChat;
+
+        chat.forEach((u)=>{
+            if(u.user_id === newMsgReceived.message.sender_id) return;
+
+            socket.in(u.user_id).emit("messagereceived",newMsgReceived);
+        })
+    })
 });
 
 server.listen(port, () => {

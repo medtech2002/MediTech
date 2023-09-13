@@ -99,7 +99,7 @@ router.post("/chat-start/:id", auth, async (req, res) => {
             return res.status(500).send("You can only view your own account !!");
         }
     } catch (error) {
-        // console.log(error);
+        console.log(error);
         // Set Internal Server Error Status
         return res.status(500).send("Server Error !!");
     }
@@ -169,16 +169,17 @@ router.post("/message/:id", auth, async (req, res) => {
 
                     //  Take Message
                     const message = chats.message;
-                    //  If Message present
-                    if (message.length !== 0) {
-                        //  Sort the Message according to time
-                        // message.sort((a, b) => b.createdAt - a.createdAt);
-                        // Set Ok Status and send the Message
-                        return res.status(200).json(message)
+                    //  Sort the Message according to time
+                    message.sort((a, b) => b.createdAt - a.createdAt);
+
+                    const newVal = {
+                        chatId: chats._id,
+                        userChat: chats.userchat,
+                        message: message[0]
                     }
 
-                    // Set Internal Server Error Status
-                    return res.status(500).send("Invalid Message User!!");
+                    // Set Ok Status and send the Message
+                    return res.status(200).json(newVal);
                 } else {
                     // Set Internal Server Error Status
                     return res.status(500).send("Invalid Message User!!");
@@ -193,7 +194,7 @@ router.post("/message/:id", auth, async (req, res) => {
             return res.status(500).send("You can only view your own account !!");
         }
     } catch (error) {
-        // console.log(error);
+        console.log(error);
         // Set Internal Server Error Status
         return res.status(500).send("Server Error !!");
     }
@@ -244,7 +245,7 @@ router.delete("/del-message/:id", auth, async (req, res) => {
                     //  Sort the Message according to time
                     // message.sort((a, b) => b.createdAt - a.createdAt);
                     // Set Ok Status and send the Message
-                    return res.status(200).json(message)
+                    return res.status(200).json(sendMsg)
                 }
 
                 // Set Internal Server Error Status
@@ -288,7 +289,7 @@ router.get("/all-chats/:id", auth, async (req, res) => {
                     // Take details of the Oponent User
                     const otherUserChat = c.userchat.filter((u) => u.user_id.toString() !== user_id);
                     // Take details of the Oponent User First Array
-                    const opChat=otherUserChat[0];
+                    const opChat = otherUserChat[0];
                     //   Push into the Chat
                     allUserChat.push(
                         {

@@ -1,0 +1,173 @@
+[
+    {
+        "medicine": "Paracetamol",
+        "composition": "The active ingredient in Paracetamol is acetaminophen.",
+        "usage": "Paracetamol is commonly used to reduce pain and fever. It can be taken orally in tablet or liquid form. The dosage depends on age and body weight, and it should be taken as directed by a healthcare professional or according to the instructions on the packaging. It's important not to exceed the recommended dosage, as excessive use can lead to liver damage.",
+        "side_effects": [
+            "Common side effects may include nausea, vomiting, and upset stomach.",
+            "In rare cases, severe skin reactions or allergic reactions may occur. Seek medical attention if you experience any unusual symptoms."
+        ]
+    },
+    {
+        "medicine": "Ibuprofen",
+        "composition": "The active ingredient in Ibuprofen is ibuprofen.",
+        "usage": "Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) used to reduce pain, inflammation, and fever. It can be taken orally in tablet or liquid form. The dosage depends on age and body weight. It should be taken with food or milk to reduce the risk of stomach upset. Avoid alcohol while taking Ibuprofen, as it can increase the risk of stomach bleeding.",
+        "side_effects": [
+            "Common side effects may include upset stomach, heartburn, and dizziness.",
+            "In rare cases, NSAIDs like Ibuprofen may cause serious cardiovascular or gastrointestinal problems. If you experience chest pain, shortness of breath, weakness, or have black/tarry stools, seek immediate medical attention."
+        ]
+    },
+    {
+        "medicine": "Aspirin",
+        "composition": "The active ingredient in Aspirin is acetylsalicylic acid (ASA).",
+        "usage": "Aspirin is used to relieve pain, reduce inflammation, and lower fever. It is commonly used as a blood thinner to prevent heart attacks and strokes. It should be taken with food or milk to reduce stomach irritation. It is important not to give Aspirin to children or teenagers with viral infections due to the risk of Reye's syndrome.",
+        "side_effects": [
+            "Common side effects may include upset stomach and heartburn.",
+            "Aspirin can increase the risk of bleeding, especially when taken in high doses. It may also cause allergic reactions. If you experience signs of bleeding (e.g., easy bruising), severe stomach pain, or allergic symptoms, seek medical attention."
+        ]
+    },
+    {
+        "medicine": "Loratadine",
+        "composition": "The active ingredient in Loratadine is loratadine.",
+        "usage": "Loratadine is an antihistamine used to relieve allergy symptoms, including runny nose, sneezing, itchy or watery eyes, and itching of the throat or nose. It can be taken orally in tablet or liquid form. The dosage depends on age and should be taken as directed by a healthcare professional or according to the instructions on the packaging. It's generally taken once a day.",
+        "side_effects": [
+            "Common side effects may include headache, dry mouth, and drowsiness.",
+            "Serious side effects are rare but may include an allergic reaction with symptoms such as rash, itching, swelling, severe dizziness, or difficulty breathing."
+        ]
+    },
+    {
+        "medicine": "Omeprazole",
+        "composition": "The active ingredient in Omeprazole is omeprazole.",
+        "usage": "Omeprazole is a proton pump inhibitor (PPI) used to treat conditions like heartburn, acid reflux, and stomach ulcers. It works by reducing the production of stomach acid. It should be taken orally in capsule or tablet form, usually once a day before a meal. The duration of treatment varies depending on the condition being treated.",
+        "side_effects": [
+            "Common side effects may include headache, stomach pain, and nausea.",
+            "Long-term use of PPIs like Omeprazole may be associated with certain risks, so it's important to follow your healthcare provider's guidance."
+        ]
+    },
+    {
+        "medicine": "Simvastatin",
+        "composition": "The active ingredient in Simvastatin is simvastatin.",
+        "usage": "Simvastatin is a statin medication used to lower cholesterol levels and reduce the risk of heart disease. It is taken orally in tablet form, usually in the evening. The dosage depends on individual cholesterol levels and should be prescribed by a healthcare professional. It is often used in combination with a heart-healthy diet.",
+        "side_effects": [
+            "Common side effects may include muscle pain, diarrhea, and constipation.",
+            "Rare but serious side effects can include liver problems and a severe muscle condition called rhabdomyolysis. Contact your doctor immediately if you experience muscle pain or weakness."
+        ]
+    },
+    {
+        "medicine": "Amoxicillin",
+        "composition": "The active ingredient in Amoxicillin is amoxicillin trihydrate.",
+        "usage": "Amoxicillin is an antibiotic used to treat a variety of bacterial infections, such as respiratory tract infections, ear infections, and urinary tract infections. It is taken orally in tablet or liquid form. The dosage depends on the type and severity of the infection, and it should be taken as directed by a healthcare professional.",
+        "side_effects": [
+            "Common side effects may include diarrhea, nausea, and skin rash.",
+            "Serious side effects are rare but may include severe allergic reactions (e.g., difficulty breathing, swelling), which require immediate medical attention."
+        ]
+    },
+    {
+        "medicine": "Metformin",
+        "composition": "The active ingredient in Metformin is metformin hydrochloride.",
+        "usage": "Metformin is an oral medication used to manage high blood sugar levels in people with type 2 diabetes. It helps improve insulin sensitivity and reduce glucose production by the liver. The dosage is determined by a healthcare provider and is usually taken with meals.",
+        "side_effects": [
+            "Common side effects may include stomach upset, diarrhea, and nausea.",
+            "Serious side effects are rare but may include lactic acidosis (a potentially life-threatening condition). Seek medical attention if you experience severe weakness, muscle pain, or trouble breathing."
+        ]
+    },
+    {
+        "medicine": "Atorvastatin",
+        "composition": "The active ingredient in Atorvastatin is atorvastatin calcium.",
+        "usage": "Atorvastatin is a statin medication used to lower cholesterol levels and reduce the risk of heart disease. It is taken orally in tablet form, typically once a day. The dosage is prescribed by a healthcare professional based on cholesterol levels and heart health.",
+        "side_effects": [
+            "Common side effects may include muscle pain, diarrhea, and headache.",
+            "Serious side effects can include liver problems and a rare muscle condition called rhabdomyolysis. Contact your doctor if you experience muscle pain or tenderness."
+        ]
+    },
+    {
+        "medicine": "Cetirizine",
+        "composition": "The active ingredient in Cetirizine is cetirizine hydrochloride.",
+        "usage": "Cetirizine is an antihistamine used to relieve allergy symptoms, including sneezing, runny nose, itchy or watery eyes, and itching of the throat or nose. It can be taken orally in tablet or liquid form. The typical dosage is once a day, usually in the evening.",
+        "side_effects": [
+            "Common side effects may include drowsiness, dry mouth, and headache.",
+            "Serious side effects are rare but may include an allergic reaction with symptoms such as rash, itching, swelling, severe dizziness, or difficulty breathing."
+        ]
+    },
+    {
+        "medicine": "Albuterol",
+        "composition": "The active ingredient in Albuterol is albuterol sulfate.",
+        "usage": "Albuterol is a bronchodilator used to relieve and prevent bronchospasm in conditions like asthma and chronic obstructive pulmonary disease (COPD). It is typically administered through an inhaler or nebulizer. The dosage and frequency depend on the severity of the respiratory condition and should be prescribed by a healthcare provider.",
+        "side_effects": [
+            "Common side effects may include nervousness, shaking, and a fast heart rate.",
+            "Serious side effects can include chest pain, irregular heartbeat, and high blood pressure. Contact your doctor if you experience severe side effects."
+        ]
+    },
+    {
+        "medicine": "Prednisone",
+        "composition": "The active ingredient in Prednisone is prednisone.",
+        "usage": "Prednisone is a corticosteroid medication used to treat a variety of conditions, including inflammation, allergies, and autoimmune disorders. It can be taken orally in tablet form. The dosage and duration of treatment depend on the specific condition being treated and should be determined by a healthcare professional.",
+        "side_effects": [
+            "Common side effects may include increased appetite, weight gain, and mood changes.",
+            "Long-term use of prednisone can lead to more serious side effects, including weakened immune function, bone density loss, and digestive problems. It should be used under medical supervision."
+        ]
+    },
+    {
+        "medicine": "Ciprofloxacin",
+        "composition": "The active ingredient in Ciprofloxacin is ciprofloxacin hydrochloride.",
+        "usage": "Ciprofloxacin is an antibiotic used to treat a wide range of bacterial infections, including urinary tract infections and respiratory infections. It is taken orally in tablet or liquid form. The dosage and duration of treatment depend on the type and severity of the infection and should be prescribed by a healthcare provider.",
+        "side_effects": [
+            "Common side effects may include nausea, diarrhea, and dizziness.",
+            "Serious side effects can include tendon rupture, nerve damage, and allergic reactions. If you experience severe side effects, seek medical attention."
+        ]
+    },
+    {
+        "medicine": "Lisinopril",
+        "composition": "The active ingredient in Lisinopril is lisinopril.",
+        "usage": "Lisinopril is an angiotensin-converting enzyme (ACE) inhibitor used to treat high blood pressure and heart failure. It is taken orally in tablet form. The dosage depends on individual blood pressure and should be prescribed by a healthcare provider.",
+        "side_effects": [
+            "Common side effects may include cough, dizziness, and headache.",
+            "Serious side effects can include kidney problems and low blood pressure. Regular monitoring by a healthcare provider is essential."
+        ]
+    },
+    {
+        "medicine": "Diazepam",
+        "composition": "The active ingredient in Diazepam is diazepam.",
+        "usage": "Diazepam is a medication in the benzodiazepine class used to treat anxiety, muscle spasms, and seizures. It is taken orally in tablet or liquid form. The dosage and duration of treatment should be determined by a healthcare professional.",
+        "side_effects": [
+            "Common side effects may include drowsiness, dizziness, and fatigue.",
+            "Long-term use of diazepam can lead to physical and psychological dependence. It should be used under medical supervision and as directed."
+        ]
+    },
+    {
+        "medicine": "Ondansetron",
+        "composition": "The active ingredient in Ondansetron is ondansetron hydrochloride.",
+        "usage": "Ondansetron is an antiemetic medication used to prevent nausea and vomiting caused by chemotherapy, radiation therapy, or surgery. It is taken orally in tablet or liquid form. The dosage and timing depend on the specific situation and should be prescribed by a healthcare provider.",
+        "side_effects": [
+            "Common side effects may include headache, constipation, and fatigue.",
+            "Serious side effects are rare but may include irregular heartbeats or allergic reactions. Seek medical attention if you experience severe side effects."
+        ]
+    },
+    {
+        "medicine": "Metoprolol",
+        "composition": "The active ingredient in Metoprolol is metoprolol tartrate.",
+        "usage": "Metoprolol is a beta-blocker medication used to treat high blood pressure, angina (chest pain), and heart rhythm disorders. It is taken orally in tablet form. The dosage depends on the specific condition being treated and should be prescribed by a healthcare provider.",
+        "side_effects": [
+            "Common side effects may include tiredness, dizziness, and slowed heart rate.",
+            "Serious side effects can include worsening heart conditions or allergic reactions. Regular monitoring by a healthcare provider is important."
+        ]
+    },
+    {
+        "medicine": "Warfarin",
+        "composition": "The active ingredient in Warfarin is warfarin sodium.",
+        "usage": "Warfarin is an anticoagulant (blood thinner) medication used to prevent blood clots. It is taken orally in tablet form. The dosage depends on individual factors and should be determined by a healthcare provider. Regular monitoring of blood clotting times is essential.",
+        "side_effects": [
+            "Common side effects may include bleeding, bruising, and upset stomach.",
+            "Warfarin requires close monitoring to maintain the correct dosage and prevent excessive bleeding."
+        ]
+    },
+    {
+        "medicine": "Furosemide",
+        "composition": "The active ingredient in Furosemide is furosemide.",
+        "usage": "Furosemide is a diuretic medication used to treat conditions such as high blood pressure and edema (fluid retention). It is taken orally in tablet form. The dosage depends on the specific condition and should be prescribed by a healthcare provider.",
+        "side_effects": [
+            "Common side effects may include increased urination, dehydration, and low potassium levels.",
+            "Serious side effects can include severe electrolyte imbalances and kidney problems. Regular monitoring by a healthcare provider is important."
+        ]
+    }
+]

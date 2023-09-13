@@ -1,0 +1,149 @@
+[
+    {
+        "disease": "Common Cold"
+    },
+    {
+        "disease": "Influenza (Flu)"
+    },
+    {
+        "disease": "COVID-19"
+    },
+    {
+        "disease": "Malaria"
+    },
+    {
+        "disease": "Dengue Fever"
+    },
+    {
+        "disease": "Typhoid Fever"
+    },
+    {
+        "disease": "Rocky Mountain Spotted Fever"
+    },
+    {
+        "disease": "Tuberculosis (TB)"
+    },
+    {
+        "disease": "Pneumonia"
+    },
+    {
+        "disease": "Bronchitis"
+    },
+    {
+        "disease": "Chronic Obstructive Pulmonary Disease (COPD)"
+    },
+    {
+        "disease": "Asthma"
+    },
+    {
+        "disease": "Lung Cancer"
+    },
+    {
+        "disease": "Cystic Fibrosis"
+    },
+    {
+        "disease": "Interstitial Lung Disease (ILD)"
+    },
+    {
+        "disease": "Whooping Cough (Pertussis)"
+    },
+    {
+        "disease": "Laryngitis"
+    },
+    {
+        "disease": "Hypertension (High Blood Pressure)"
+    },
+    {
+        "disease": "Hypertensive Crisis"
+    },
+    {
+        "disease": "Hypertensive Heart Disease"
+    },
+    {
+        "disease": "Stroke"
+    },
+    {
+        "disease": "Heart Attack (Myocardial Infarction)"
+    },
+    {
+        "disease": "Kidney Disease (Hypertensive Nephropathy)"
+    },
+    {
+        "disease": "Aneurysm"
+    },
+    {
+        "disease": "Diabetic Retinopathy"
+    },
+    {
+        "disease": "Diabetic Neuropathy"
+    },
+    {
+        "disease": "Diabetic Nephropathy"
+    },
+    {
+        "disease": "Diabetic Foot Ulcers"
+    },
+    {
+        "disease": "Type 2 Diabetes"
+    },
+    {
+        "disease": "Heart Disease"
+    },
+    {
+        "disease": "Sleep Apnea"
+    },
+    {
+        "disease": "Osteoarthritis"
+    },
+    {
+        "disease": "Fatty Liver Disease (NAFLD/NASH)"
+    },
+    {
+        "disease": "Gallstones"
+    },
+    {
+        "disease": "Certain Cancers (e.g., Breast, Colon)"
+    },
+    {
+        "disease": "Cardiovascular Disease"
+    },
+    {
+        "disease": "Diabetes"
+    },
+    {
+        "disease": "Substance Abuse (e.g., Alcoholism, Drug Addiction)"
+    },
+    {
+        "disease": "Obesity"
+    },
+    {
+        "disease": "Anxiety Disorders"
+    },
+    {
+        "disease": "Chronic Pain Conditions (e.g., Fibromyalgia, Chronic Fatigue Syndrome)"
+    },
+    {
+        "disease": "Eating Disorders (e.g., Anorexia Nervosa, Bulimia Nervosa)"
+    },
+    {
+        "disease": "Alzheimer's Disease"
+    },
+    {
+        "disease": "Rheumatoid Arthritis"
+    },
+    {
+        "disease": "Cancer (various types)"
+    },
+    {
+        "disease": "Gastrointestinal Disorders (e.g., Irritable Bowel Syndrome)"
+    },
+    {
+        "disease": "Respiratory Conditions (e.g., Asthma)"
+    },
+    {
+        "disease": "Immune System Dysfunction"
+    },
+    {
+        "disease": "Mental Health Disorders (e.g., Depression)"
+    }
+]

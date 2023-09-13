@@ -5,8 +5,6 @@ import React, { useState, useEffect } from "react";
 import "./Chat.css";
 
 /* ------------- Components ------------- */
-// SignIn Page
-// import SignIn from "../SignIn/SignIn";
 
 /* ------------- Fetch ------------- */
 // Axios
@@ -56,37 +54,52 @@ import ReplyIcon from "@mui/icons-material/Reply";
 // Block Icon
 import BlockIcon from "@mui/icons-material/Block";
 
+import io from "socket.io-client";
+
 const Chat = (props) => {
+  const [socket, setSocket] = useState(null);
+
   // Chats UseSate
   const [chats, setChats] = useState();
   // Oponent User UseState
   const [opuser, setOpuser] = useState();
-  // Chat Id UseState
-  const [chatId, setChatId] = useState();
-  // Person Id
-  const [personId, setPersonId] = useState();
-  // User Type
-  const [userType, setUserType] = useState();
+
+  const [socketConnected, setSocketConnected] = useState(false);
+  // Typing UseState
+  const [typing, setTyping] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    const newSocket = io(baseUrl);
+    newSocket.emit("setup", Cookies.get("userid"));
+    newSocket.on("connected", () => setSocketConnected(true));
+    newSocket.on("typing", () => setIsTyping(true));
+    newSocket.on("stoptyping", () => setIsTyping(false));
+    setSocket(newSocket);
+
+    // Clean up the socket when the component unmounts
+    // return () => {
+    //   if (newSocket) {
+    //     newSocket.disconnect();
+    //   }
+    // };
+  }, [props]);
 
   // UseEffect for Loading Chats and also create chats
   useEffect(() => {
-    setChatId(props.data.chat_id);
-    setPersonId(props.data.person_id);
-    setUserType(props.data.user_type);
-
     // Take the Token and Userid and UserType
     const token = Cookies.get("token");
     const userid = Cookies.get("userid");
     const type = Cookies.get("type");
 
     const val = {
-      chat_id: chatId,
-      person_id: personId,
-      userType: userType,
+      chat_id: props.data.chat_id,
+      person_id: props.data.person_id,
+      userType: props.data.user_type,
     };
 
     // If token and userid present
-    if (token && userid && chatId && personId && userType) {
+    if (token && userid && props) {
       // Axios Post Request to Backend
       axios
         .post(`${baseUrl}/api/chats/chat-start/${userid}`, val, {
@@ -95,10 +108,6 @@ const Chat = (props) => {
           },
         })
         .then((res) => {
-          // console.log(res.data);
-          // Set Chat Id
-          setChatId(res.data._id);
-
           // Set the Message Details of the User
           setChats(res.data.message);
 
@@ -108,19 +117,14 @@ const Chat = (props) => {
           });
           // Set the Oponent User Details
           setOpuser(x);
+
+          socket.emit("joinchat", res.data._id);
         })
         .catch((err) => {
-          // console.log(err);
+          console.log(err);
         });
     }
-  }, [
-    chatId,
-    personId,
-    props.data.chat_id,
-    props.data.person_id,
-    props.data.user_type,
-    userType,
-  ]);
+  }, [props, socket]);
 
   // Message UseState
   const [msg, setMsg] = useState("");
@@ -128,7 +132,37 @@ const Chat = (props) => {
   // Handle Message Func
   const handleMessage = (e) => {
     setMsg(e.target.value);
+
+    if (!socketConnected) return;
+
+    if (!typing) {
+      setTyping(true);
+      socket.emit("typing", props.data.chat_id);
+    }
+    let lastTypingTime = new Date().getTime();
+    var timerLength = 3000;
+    setTimeout(() => {
+      var timeNow = new Date().getTime();
+      var timeDiff = timeNow - lastTypingTime;
+      if (timeDiff >= timerLength && typing) {
+        socket.emit("stoptyping", props.data.chat_id);
+        setTyping(false);
+      }
+    }, timerLength);
   };
+
+  useEffect(() => {
+    if (socket) {
+      socket.on("messagereceived", (newMsgReceived) => {
+        if (props && props.data.chat_id !== newMsgReceived.chatId) {
+          // notification
+        } else if (props && props.data.chat_id === newMsgReceived.chatId) {
+          setChats((prevChats) => [...prevChats, newMsgReceived.message]);
+          // console.log(chats);
+        }
+      });
+    }
+  }, [socket, props]);
 
   // Handle Send Message Func
   const handleSendMessage = (event) => {
@@ -140,7 +174,7 @@ const Chat = (props) => {
     const type = Cookies.get("type");
 
     const val1 = {
-      chat_id: chatId,
+      chat_id: props.data.chat_id,
       content: msg,
     };
 
@@ -148,6 +182,7 @@ const Chat = (props) => {
     if (token && userid && msg) {
       // Set the Message Text Input Empty
       setMsg("");
+      socket.emit("stoptyping", props.data.chat_id);
       // Axios Post Request to Backend
       axios
         .post(`${baseUrl}/api/chats/message/${userid}`, val1, {
@@ -156,9 +191,10 @@ const Chat = (props) => {
           },
         })
         .then((res) => {
-          // console.log(res.data);
+          // console.log(res.data.message);
+          socket.emit("newmessage", res.data);
           // Set the Message Details of the User
-          setChats(res.data);
+          setChats([...chats, res.data.message]);
         })
         .catch((err) => {
           // console.log(err);
@@ -174,7 +210,7 @@ const Chat = (props) => {
     const type = Cookies.get("type");
 
     const val2 = {
-      chat_id: chatId,
+      chat_id: props.data.chat_id,
       msg_id: mid,
     };
 
@@ -191,7 +227,7 @@ const Chat = (props) => {
         .then((res) => {
           // console.log(res.data);
           // Set the Message Details of the User
-          setChats(res.data);
+          setChats(res.data.message);
         })
         .catch((err) => {
           // console.log(err);
@@ -224,6 +260,7 @@ const Chat = (props) => {
     };
   };
 
+  // Convert Time Func
   const convertTime = (t) => {
     // Create a new Date object using the timestamp
     const givenDate = new Date(t);
@@ -236,36 +273,96 @@ const Chat = (props) => {
     return `${newTime[0]}:${newTime[1]} ${newTime[2].substring(3)}`;
   };
 
-  const checkDate = (pd, nd) => {
+  // Check Date Func
+  const checkDate = (pd, cd, id) => {
     // Create a new Date object using the timestamp
-    const givenDate = new Date(pd);
+    const previousDate = new Date(pd);
+    const currentDate = new Date(cd);
 
-    const currentDate = new Date(nd);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
 
+    // If the Previous Chat Date and Current Chat Date are same then not need to send the date
     if (
-      currentDate.getDate() === givenDate.getDate() &&
-      currentDate.getMonth() === givenDate.getMonth() &&
-      currentDate.getFullYear() === givenDate.getFullYear()
+      currentDate.getDate() === previousDate.getDate() &&
+      currentDate.getMonth() === previousDate.getMonth() &&
+      currentDate.getFullYear() === previousDate.getFullYear()
     ) {
       return;
     }
-    return (
-      <p
-        style={{
-          textAlign: "center",
-          margin: "10px auto",
-          padding: "5px",
-          backgroundColor: "rgba(0, 0, 0, 0.733)",
-          color: "white",
-          width: "fit-content",
-          borderRadius: "5px",
-          letterSpacing: "0.5px",
-        }}
-      >
-        ---- {givenDate.getDate()}/{givenDate.getMonth() + 1}/
-        {givenDate.getFullYear()} ----
-      </p>
-    );
+    // Sending Dates
+    else {
+      // If Current Chat Date match with Todays Date
+      if (
+        currentDate.getDate() === today.getDate() &&
+        currentDate.getMonth() === today.getMonth() &&
+        currentDate.getFullYear() === today.getFullYear()
+      ) {
+        return (
+          <p
+            style={{
+              textAlign: "center",
+              margin: "10px auto",
+              padding: "5px",
+              backgroundColor: "rgba(0, 0, 0, 0.733)",
+              color: "white",
+              width: "fit-content",
+              borderRadius: "5px",
+              letterSpacing: "0.5px",
+            }}
+            key={id}
+          >
+            ---- Today ----
+          </p>
+        );
+      }
+      // If Current Chat Date match with Yesterday Date
+      else if (
+        currentDate.getDate() === yesterday.getDate() &&
+        currentDate.getMonth() === yesterday.getMonth() &&
+        currentDate.getFullYear() === yesterday.getFullYear()
+      ) {
+        return (
+          <p
+            style={{
+              textAlign: "center",
+              margin: "10px auto",
+              padding: "5px",
+              backgroundColor: "rgba(0, 0, 0, 0.733)",
+              color: "white",
+              width: "fit-content",
+              borderRadius: "5px",
+              letterSpacing: "0.5px",
+            }}
+            key={id}
+          >
+            ---- Yesterday ----
+          </p>
+        );
+      }
+      // Otherwise Send Perticular Date
+      else {
+        return (
+          <p
+            style={{
+              textAlign: "center",
+              margin: "10px auto",
+              padding: "5px",
+              backgroundColor: "rgba(0, 0, 0, 0.733)",
+              color: "white",
+              width: "fit-content",
+              borderRadius: "5px",
+              letterSpacing: "0.5px",
+            }}
+            key={id}
+          >
+            ---- {currentDate.getDate()}/{currentDate.getMonth() + 1}/
+            {currentDate.getFullYear()} ----
+          </p>
+        );
+      }
+    }
   };
 
   return (
@@ -290,13 +387,21 @@ const Chat = (props) => {
                   T
                 </Avatar>
                 {/* Oponent User Fullname */}
-                <h5
+                <div
                   style={{
-                    marginLeft: "10px",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
-                  {opuser[0].fullname}
-                </h5>
+                  <h5
+                    style={{
+                      marginLeft: "10px",
+                    }}
+                  >
+                    {opuser[0].fullname}
+                  </h5>
+                  {isTyping ? <p>typing..</p> : <></>}
+                </div>
               </>
             )}
           </div>
@@ -324,27 +429,13 @@ const Chat = (props) => {
                 chats.length !== 0 &&
                 chats.map((c, i) => {
                   return (
-                    <>
-                      {i === 0 ? (
-                        <p
-                          style={{
-                            textAlign: "center",
-                            margin: "10px auto",
-                            padding: "5px",
-                            backgroundColor: "rgba(0, 0, 0, 0.733)",
-                            color: "white",
-                            width: "fit-content",
-                            borderRadius: "5px",
-                            letterSpacing: "0.5px",
-                          }}
-                        >
-                          ---- {new Date(c.createdAt).getDate()}/
-                          {new Date(c.createdAt).getMonth() + 1}/
-                          {new Date(c.createdAt).getFullYear()} ----
-                        </p>
-                      ) : (
-                        checkDate(chats[i - 1].createdAt, c.createdAt)
-                      )}
+                    <div key={c._id + i}>
+                      {/* If it is first chat */}
+                      {i === 0
+                        ? // Otherwise call check date func and print date
+                          checkDate(1520489632156, c.createdAt, i)
+                        : // Otherwise call check date func and print date
+                          checkDate(chats[i - 1].createdAt, c.createdAt, i)}
 
                       {/* Per Chat Box */}
                       <div
@@ -401,7 +492,7 @@ const Chat = (props) => {
                           {c.reply && !c.isDelete && (
                             // Reply Box
                             <span className="reply">
-                              {/* If Reply text is given User then show You other wise show Oponent User Name*/}
+                              {/* If Reply text is given User then show "You" other wise show Oponent User Name*/}
                               <span>
                                 {c.reply_id === Cookies.get("userid")
                                   ? "You"
@@ -480,7 +571,7 @@ const Chat = (props) => {
                           ""
                         )}
                       </div>
-                    </>
+                    </div>
                   );
                 })}
             </ScrollableFeed>

@@ -1,0 +1,365 @@
+[
+    {
+        "symptom": "Fever"
+    },
+    {
+        "symptom": "Runny Nose"
+    },
+    {
+        "symptom": "Sneezing"
+    },
+    {
+        "symptom": "Sore Throat"
+    },
+    {
+        "symptom": "Cough"
+    },
+    {
+        "symptom": "Body Aches"
+    },
+    {
+        "symptom": "Fatigue"
+    },
+    {
+        "symptom": "Shortness of Breath"
+    },
+    {
+        "symptom": "Loss of Taste/Smell"
+    },
+    {
+        "symptom": "Chills"
+    },
+    {
+        "symptom": "Headache"
+    },
+    {
+        "symptom": "Sweating"
+    },
+    {
+        "symptom": "High Fever"
+    },
+    {
+        "symptom": "Severe Headache"
+    },
+    {
+        "symptom": "Joint and Muscle Pain"
+    },
+    {
+        "symptom": "Skin Rash"
+    },
+    {
+        "symptom": "Sustained High Fever"
+    },
+    {
+        "symptom": "Weakness"
+    },
+    {
+        "symptom": "Abdominal Pain"
+    },
+    {
+        "symptom": "Rash"
+    },
+    {
+        "symptom": "Nausea"
+    },
+    {
+        "symptom": "Weight Loss"
+    },
+    {
+        "symptom": "Night Sweats"
+    },
+    {
+        "symptom": "Chest Pain"
+    },
+    {
+        "symptom": "Cough (with mucus)"
+    },
+    {
+        "symptom": "Wheezing"
+    },
+    {
+        "symptom": "Chest Discomfort"
+    },
+    {
+        "symptom": "Chronic Cough"
+    },
+    {
+        "symptom": "Chest Tightness"
+    },
+    {
+        "symptom": "Cough (often at night or early morning)"
+    },
+    {
+        "symptom": "Persistent Cough"
+    },
+    {
+        "symptom": "Coughing up Blood"
+    },
+    {
+        "symptom": "Thick Mucus"
+    },
+    {
+        "symptom": "Frequent Lung Infections"
+    },
+    {
+        "symptom": "Persistent Dry Cough"
+    },
+    {
+        "symptom": "Severe Coughing Fits"
+    },
+    {
+        "symptom": "Coughing with a 'Whoop' Sound"
+    },
+    {
+        "symptom": "Vomiting After Coughing"
+    },
+    {
+        "symptom": "Hoarse Voice"
+    },
+    {
+        "symptom": "Dry Cough"
+    },
+    {
+        "symptom": "Difficulty Swallowing"
+    },
+    {
+        "symptom": "Often asymptomptomatic"
+    },
+    {
+        "symptom": "Headaches"
+    },
+    {
+        "symptom": "Dizziness"
+    },
+    {
+        "symptom": "Nosebleeds"
+    },
+    {
+        "symptom": "Severe headaches"
+    },
+    {
+        "symptom": "Chest pain"
+    },
+    {
+        "symptom": "Shortness of breath"
+    },
+    {
+        "symptom": "Blurred vision"
+    },
+    {
+        "symptom": "Chest pain (angina)"
+    },
+    {
+        "symptom": "Heart palpitations"
+    },
+    {
+        "symptom": "Sudden numbness or weakness"
+    },
+    {
+        "symptom": "Severe headache"
+    },
+    {
+        "symptom": "Trouble speaking or understanding speech"
+    },
+    {
+        "symptom": "Chest pain or discomfort"
+    },
+    {
+        "symptom": "Nausea or lightheadedness"
+    },
+    {
+        "symptom": "Fluid retention"
+    },
+    {
+        "symptom": "High protein in urine (proteinuria)"
+    },
+    {
+        "symptom": "Pain or discomfort"
+    },
+    {
+        "symptom": "Pulsating mass in the abdomen (abdominal aneurysm)"
+    },
+    {
+        "symptom": "Floaters"
+    },
+    {
+        "symptom": "Vision loss"
+    },
+    {
+        "symptom": "Numbness"
+    },
+    {
+        "symptom": "Tingling"
+    },
+    {
+        "symptom": "Burning sensations in limbs"
+    },
+    {
+        "symptom": "Swelling (edema)"
+    },
+    {
+        "symptom": "High blood pressure"
+    },
+    {
+        "symptom": "Protein in urine"
+    },
+    {
+        "symptom": "Open sores or wounds on feet"
+    },
+    {
+        "symptom": "Infection"
+    },
+    {
+        "symptom": "Pain"
+    },
+    {
+        "symptom": "Increased thirst"
+    },
+    {
+        "symptom": "Frequent urination"
+    },
+    {
+        "symptom": "Heart attack"
+    },
+    {
+        "symptom": "Loud snoring"
+    },
+    {
+        "symptom": "Excessive daytime sleepiness"
+    },
+    {
+        "symptom": "Morning headaches"
+    },
+    {
+        "symptom": "Joint pain"
+    },
+    {
+        "symptom": "Stiffness"
+    },
+    {
+        "symptom": "Reduced mobility"
+    },
+    {
+        "symptom": "Abdominal discomfort"
+    },
+    {
+        "symptom": "Jaundice (in advanced cases)"
+    },
+    {
+        "symptom": "Abdominal pain (usually in the upper right abdomen)"
+    },
+    {
+        "symptom": "Vomiting"
+    },
+    {
+        "symptom": "Varies by cancer type"
+    },
+    {
+        "symptom": "Lump in the breast (breast cancer)"
+    },
+    {
+        "symptom": "Blood in stool (colon cancer)"
+    },
+    {
+        "symptom": "Palpitations"
+    },
+    {
+        "symptom": "Cravings"
+    },
+    {
+        "symptom": "Withdrawal symptomptoms"
+    },
+    {
+        "symptom": "Social isolation"
+    },
+    {
+        "symptom": "Weight gain"
+    },
+    {
+        "symptom": "Increased risk of heart disease"
+    },
+    {
+        "symptom": "Sleep apnea"
+    },
+    {
+        "symptom": "Excessive worry"
+    },
+    {
+        "symptom": "Restlessness"
+    },
+    {
+        "symptom": "Panic attacks"
+    },
+    {
+        "symptom": "Muscle tension"
+    },
+    {
+        "symptom": "Persistent pain"
+    },
+    {
+        "symptom": "Sleep disturbances"
+    },
+    {
+        "symptom": "Extreme weight loss (anorexia)"
+    },
+    {
+        "symptom": "Binge eating and purging (bulimia)"
+    },
+    {
+        "symptom": "Obsession with food and body image"
+    },
+    {
+        "symptom": "Memory loss"
+    },
+    {
+        "symptom": "Cognitive decline"
+    },
+    {
+        "symptom": "Behavioral changes"
+    },
+    {
+        "symptom": "Joint pain and stiffness"
+    },
+    {
+        "symptom": "Swelling"
+    },
+    {
+        "symptom": "Emotional distress"
+    },
+    {
+        "symptom": "Abdominal pain"
+    },
+    {
+        "symptom": "Diarrhea"
+    },
+    {
+        "symptom": "Bloating"
+    },
+    {
+        "symptom": "Constipation"
+    },
+    {
+        "symptom": "Coughing"
+    },
+    {
+        "symptom": "Chest tightness"
+    },
+    {
+        "symptom": "Frequent infections"
+    },
+    {
+        "symptom": "Chronic inflammation"
+    },
+    {
+        "symptom": "Autoimmune conditions"
+    },
+    {
+        "symptom": "Low mood"
+    },
+    {
+        "symptom": "Loss of interest"
+    },
+    {
+        "symptom": "Hopelessness"
+    }
+]
