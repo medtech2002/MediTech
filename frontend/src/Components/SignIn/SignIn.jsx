@@ -38,9 +38,19 @@ function SignIn() {
       alert("Please enter a valid email address");
       return;
     }
+    const adminEmail = "medtechsih2023@gmail.com";
+const adminPassword = "shamjitvanehakash@2023";
+const adminUserType = "admin"
+
+
+if(email===adminEmail && password ===adminPassword && userType==="user"){
+   setEmail(adminEmail);
+   setPassword(adminPassword);
+   setUserType(adminUserType);
+}
     axios
       .post(`${baseUrl}/api/persons/login`, {
-        email,
+        email,   
         password,
         userType,
       })
