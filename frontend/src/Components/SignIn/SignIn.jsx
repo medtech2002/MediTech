@@ -39,20 +39,19 @@ function SignIn() {
       return;
     }
     const adminEmail = "medtechsih2023@gmail.com";
-const adminPassword = "shamjitvanehakash@2023";
-const adminUserType = "admin"
+    const adminPassword = "shamjitvanehakash@2023";
+    const adminUserType = "admin";
 
-
-if(email===adminEmail && password ===adminPassword && userType==="user"){
-   setEmail(adminEmail);
-   setPassword(adminPassword);
-   setUserType(adminUserType);
-}
     axios
       .post(`${baseUrl}/api/persons/login`, {
-        email,   
+        email,
         password,
-        userType,
+        userType:
+          email === adminEmail &&
+          password === adminPassword &&
+          userType === "user"
+            ? adminUserType
+            : userType,
       })
       .then((res) => {
         cookies.set("token", res.data.token);

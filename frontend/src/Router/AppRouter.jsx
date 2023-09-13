@@ -14,6 +14,7 @@ import SignUp from "../Components/SignUp/SignUp";
 import SignIn from "../Components/SignIn/SignIn";
 // All Chats Page
 import AllChats from "../Components/AllChats/AllChats";
+import DiseasesChecker from "../Components/DiseasesChecker/DiseasesChecker";
 
 const AppRouter = () => {
   return (
@@ -31,6 +32,9 @@ const AppRouter = () => {
         </Routes>
         <Routes>
           <Route exact path="/allchats" element={<AllChats />} />
+        </Routes>
+        <Routes>
+          <Route exact path="/disease-checker" element={<DiseasesChecker />} />
         </Routes>
       </Router>
     </>
