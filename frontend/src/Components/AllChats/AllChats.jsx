@@ -30,6 +30,7 @@ import { Avatar } from "@mui/material";
 import Card from "@mui/material/Card";
 // Button
 import Button from "@mui/material/Button";
+import VideoCall from "../VideoCall/VideoCall";
 
 const AllChats = () => {
   const [perUserChat, setPerUserChat] = useState();
@@ -61,6 +62,7 @@ const AllChats = () => {
   }, []);
 
   const [det, setDet] = useState();
+  const [vid, setVid] = useState();
 
   return (
     <>
@@ -112,14 +114,31 @@ const AllChats = () => {
                   >
                     Start Chat
                   </Button>
+
+                  <Button
+                    color="secondary"
+                    variant="contained"
+                    sx={{
+                      mt: 2,
+                      mb: 2,
+                    }}
+                    size="small"
+                    onClick={() => {
+                      setVid({
+                        chatId: pc.chat_id,
+                        name: localStorage.getItem("name"),
+                      });
+                    }}
+                  >
+                    Call
+                  </Button>
                 </Card>
               );
             })}
         </div>
         <div className="msgChats">
-          {
-            det && <Chat data={det}/>
-          }
+          {det && <Chat data={det} />}
+          {vid && <VideoCall vid={vid} />}
         </div>
       </div>
     </>

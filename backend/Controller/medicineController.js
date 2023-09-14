@@ -18,7 +18,14 @@ const auth = require('../Middleware/auth');
 router.post("/add-medicine/:id", auth, async (req, res) => {
     try {
         // If the user id and params id match
-        if (req.user.id === req.params.id && req.body.userType.toLowerCase() == "admin") {
+        if (req.user.id === req.params.id) {
+            const admin = await Admin.findById({ _id: req.params.id });
+
+            if (!admin) {
+                // Set Unathorized Status
+                return res.status(401).send("Unauthorized Access");
+            }
+
             //  Take the details from body
             const { name, pic, price, inStock, composition, usage, sideEffects } = req.body;
 

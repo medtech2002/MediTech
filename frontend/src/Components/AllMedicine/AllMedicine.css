@@ -1,0 +1,124 @@
+.allMedicine {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.allMedicine .filterBox {
+  width: 20%;
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+}
+
+.allMedicine .medBox {
+  width: 80%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.allMedicine .medBox .searchBar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  margin-bottom: 10px;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+.allMedicine .medBox .searchBar input {
+  width: 80%;
+  padding: 10px 20px;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-style: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
+  color: black;
+}
+
+.allMedicine .medBox .searchBar input:focus {
+  outline: none;
+}
+
+.allMedicine .medBox .products {
+  width: 100%;
+  min-height: calc(100vh-);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.allMedicine .medBox .products .card{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: none;
+    margin: 15px
+}
+
+.allMedicine .medBox .products .card img{
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.allMedicine .medBox .products .card .price{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allMedicine .medBox .products .card .price .rate{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(223, 171, 2);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.allMedicine .medBox .products .card .price .cartprice{
+    background-color: rgba(158, 158, 158, 0.37);
+    color: #420e94;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.allMedicine .medBox .products .card .view{
+    margin: 0 auto;
+    background-color: rgba(5, 0, 10, 0.74);
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    transition: 0.1s ease;
+}
+
+.allMedicine .medBox .products .card .view:hover{
+    background-color: aliceblue;
+    color: black;
+}
