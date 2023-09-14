@@ -3,11 +3,7 @@ import React from "react";
 
 /* ------------- React Router Dom ------------- */
 // Import Router,Route,Routes
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 /* ------------- Components ------------- */
 // Home Page
@@ -25,8 +21,6 @@ import AllMedicine from "../Components/AllMedicine/AllMedicine";
 import Navbar from "../Components/Navbar/Navbar";
 
 const AppRouter = () => {
-  const userType = "admin";
-
   return (
     <>
       <Router>
@@ -34,17 +28,9 @@ const AppRouter = () => {
         <Routes>
           {/* Home Route */}
           <Route exact path="/" element={<Home />} />
-        </Routes>
-        <Routes>
           <Route exact path="/signup" element={<SignUp />} />
-        </Routes>
-        <Routes>
           <Route exact path="/signin" element={<SignIn />} />
-        </Routes>
-        <Routes>
           <Route exact path="/allchats" element={<AllChats />} />
-        </Routes>
-        <Routes>
           <Route exact path="/disease-checker" element={<DiseasesChecker />} />
         </Routes>
         <Routes>
