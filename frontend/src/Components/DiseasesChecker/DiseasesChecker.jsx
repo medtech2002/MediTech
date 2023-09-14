@@ -8,7 +8,7 @@ import "./DiseasesChecker.css";
 
 /* ------------- Fetch ------------- */
 // Axios
-import axios, { all } from "axios";
+import axios from "axios";
 
 /* ------------- React Router Dom ------------- */
 // UseNavigate && UseParams
