@@ -36,22 +36,14 @@ const AppRouter = () => {
         <Routes>
           {/* Home Route */}
           <Route exact path="/" element={<Home />} />
-        </Routes>
-        <Routes>
           <Route exact path="/signup" element={<SignUp />} />
-        </Routes>
-        <Routes>
           <Route exact path="/signin" element={<SignIn />} />
-        </Routes>
-        <Routes>
           <Route exact path="/allchats" element={<AllChats />} />
-        </Routes>
-        <Routes>
           <Route exact path="/disease-checker" element={<DiseasesChecker />} />
         <Route
           path="/addmedicine"
           element={<PrivateRoute element={<AddMedicine />} userType={userType} />}
-        />
+          />
         </Routes>
       </Router>
     </>
