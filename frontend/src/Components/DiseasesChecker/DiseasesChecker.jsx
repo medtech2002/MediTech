@@ -14,12 +14,12 @@ const DiseasesChecker = () => {
   const [sym1, setSym1] = useState("");
   const [sym2, setSym2] = useState("");
   const [sym3, setSym3] = useState("");
-  const [lastSymptom, setLastSymptom] = useState("");
+  const [sym4, setSym4] = useState("");
   const [duration, setDuration] = useState("");
-  const [availableSymptoms2, setAvailableSymptoms2] = useState([]); // Define as state variable
-  const [availableSymptoms3, setAvailableSymptoms3] = useState([]); // Define as state variable
-  const [symptoms, setSymptoms] = useState([]);
-
+  // Define as state variables using useState
+  const [availableSymptoms2, setAvailableSymptoms2] = useState([]);
+  const [availableSymptoms3, setAvailableSymptoms3] = useState([]);
+  const [availableSymptoms4, setAvailableSymptoms4] = useState([]);
   useEffect(() => {
     const token = Cookies.get("token");
     const userid = Cookies.get("userid");
@@ -35,51 +35,18 @@ const DiseasesChecker = () => {
           setAllSymptom(res.data);
         })
         .catch((err) => {
-          console.error(err);
+          console.log(err);
         });
     }
   }, []);
 
-  useEffect(() => {
-    if (symptoms && symptoms.length !== 0) {
-      const token = Cookies.get("token");
-      const userid = Cookies.get("userid");
-
-      if (token && userid) {
-        axios
-          .post(
-            `${baseUrl}/api/symptoms/symptom-find/${userid}`,
-            { symptoms: symptoms },
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          )
-          .then((res) => {
-            // Handle the response and update the state
-            if (Array.isArray(res.data)) {
-              setLastSymptom(res.data[res.data.length - 1]);
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      }
-    }
-  }, [symptoms]);
-
-  const [selectedSymptom1, setSelectedSymptom1] = useState("");
-
   const handleChangeSym1 = async (e) => {
     const symptom1 = e.target.value;
-    setSelectedSymptom1(symptom1);
     setSym1(symptom1);
-    setSym2(""); // Clear sym2 when sym1 changes
-    setSym3(""); // Clear sym3 when sym1 changes
-    setLastSymptom(""); // Clear lastSymptom when sym1 changes
+    setSym2("");
+    setSym3("");
 
-    // Make an API call to fetch available symptoms for sym2 based on selectedSymptom1
+    // Make an API call to fetch available symptoms for Symptom 2 based on selectedSymptom1
     try {
       const token = Cookies.get("token");
       const userid = Cookies.get("userid");
@@ -87,12 +54,15 @@ const DiseasesChecker = () => {
       if (token && userid) {
         const response = await axios.post(
           `${baseUrl}/api/symptoms/symptom-find/${userid}`,
-          { selectedSymptom1: symptom1 } // Pass symptom1 to the backend
+          { symptoms: [symptom1] },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          } // Pass symptom1 to the backend
         );
-
         if (Array.isArray(response.data)) {
-          const availableSymptoms2 = response.data;
-          setAvailableSymptoms2(availableSymptoms2);
+          setAvailableSymptoms2(response.data);
         }
       }
     } catch (error) {
@@ -103,32 +73,36 @@ const DiseasesChecker = () => {
   const handleChangeSym2 = async (e) => {
     const selectedSymptom2 = e.target.value;
     setSym2(selectedSymptom2);
-    setSym3(""); // Clear sym3 when sym2 changes
-    setLastSymptom(""); // Clear lastSymptom when sym2 changes
-  
+    setSym3("");
+
     // Check if selectedSymptom2 is the second last symptom in the array
-    const isSecondLastSymptom = allSymptom.length > 1 && allSymptom[allSymptom.length - 2].symptom === selectedSymptom2;
-  
+    const isSecondLastSymptom =
+      allSymptom.length > 1 &&
+      allSymptom[allSymptom.length - 2].symptom === selectedSymptom2;
+
     if (isSecondLastSymptom) {
-      // If selectedSymptom2 is the second last symptom, automatically populate symptom 4
+      // If selectedSymptom2 is the second last symptom, automatically populate symptom 3
       const lastSymptomValue = allSymptom[allSymptom.length - 1].symptom;
       setSym3(lastSymptomValue);
-      setLastSymptom(lastSymptomValue);
     }
-  
-    // Make an API call to fetch available symptoms for sym3 based on selectedSymptom1 and selectedSymptom2
+
+    // Make an API call to fetch available symptoms for Symptom 3 based on selectedSymptom1 and selectedSymptom2
     try {
       const token = Cookies.get("token");
       const userid = Cookies.get("userid");
-  
+
       if (token && userid) {
         const response = await axios.post(
           `${baseUrl}/api/symptoms/symptom-find/${userid}`,
-          { selectedSymptom1: sym1, selectedSymptom2 }
+          { symptoms: [sym1, selectedSymptom2] },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          } // Pass sym1 and selectedSymptom2 to the backend
         );
-  
+
         if (Array.isArray(response.data)) {
-          const availableSymptoms3 = response.data;
           setAvailableSymptoms3(availableSymptoms3);
         }
       }
@@ -137,11 +111,44 @@ const DiseasesChecker = () => {
     }
   };
 
-  const handleChangeSym3 = (e) => {
+  const handleChangeSym3 = async (e) => {
     const selectedSymptom3 = e.target.value;
     setSym3(selectedSymptom3);
-    setLastSymptom(""); // Clear lastSymptom when sym3 changes
-    setSymptoms([sym1, sym2, selectedSymptom3]);
+
+    // Check if selectedSymptom3 is the second last symptom in the array
+    const isSecondLastSymptom =
+      allSymptom.length > 1 &&
+      allSymptom[allSymptom.length - 2].symptom === selectedSymptom3;
+
+    if (isSecondLastSymptom) {
+      // If selectedSymptom3 is the second last symptom, automatically populate symptom 4
+      const lastSymptomValue = allSymptom[allSymptom.length - 1].symptom;
+      setSym4(lastSymptomValue); // Assuming you have Symptom 4 in your component's state
+    } else {
+      // Otherwise, make an API call to fetch available symptoms for Symptom 4 based on selectedSymptom1, selectedSymptom2, and selectedSymptom3
+      try {
+        const token = Cookies.get("token");
+        const userid = Cookies.get("userid");
+
+        if (token && userid) {
+          const response = await axios.post(
+            `${baseUrl}/api/symptoms/symptom-find/${userid}`,
+            { symptoms: [sym1, sym2, selectedSymptom3] }, // Pass sym1, sym2, and selectedSymptom3 to the backend
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+
+          if (Array.isArray(response.data)) {
+            setAvailableSymptoms4(response.data); // Assuming you have availableSymptoms4 state
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
 
   const handleChangeDuration = (e) => {
@@ -221,7 +228,7 @@ const DiseasesChecker = () => {
                 <MenuItem value="1">3 days to 1 week</MenuItem>
                 <MenuItem value="2">3 days to 2 weeks</MenuItem>
                 <MenuItem value="3">3 days to 3 weeks</MenuItem>
-                <MenuItem value="3">1 month</MenuItem>
+                <MenuItem value="4">1 month</MenuItem>
               </Select>
             </FormControl>
           )}
@@ -232,4 +239,3 @@ const DiseasesChecker = () => {
 };
 
 export default DiseasesChecker;
-
