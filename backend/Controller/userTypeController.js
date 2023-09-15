@@ -19,6 +19,8 @@ const UserProfile = require("../Model/userProfile");
 const Doctor = require("../Model/doctor");
 // Import Doctor Profile Collection/Model
 const DoctorProfile = require("../Model/doctorProfile");
+// Import Authentication
+const auth = require('../Middleware/auth');
 
 // Hash Password Func
 const hashPassword = async (ps) => {
@@ -233,6 +235,68 @@ router.post("/login", async (req, res) => {
             default:
                 //  Set Bad Request Status
                 res.status(400).send("Server Error !!");
+        }
+    } catch (error) {
+        console.log(error);
+        //  Set Bad Request Status
+        res.status(400).send(`${error}`);
+    }
+})
+
+// Get Details API
+router.get("/get-details/:id/:type", auth, async (req, res) => {
+    try {
+        if (req.user.id === req.params.id) {
+            // Conditions
+            switch (req.params.type.toLowerCase()) {
+                // For Admin
+                case "admin":
+                    // Check the email is already exists or not
+                    let admin = await Admin.findById({ _id: req.params.id });
+                    // If exists the email
+                    if (!admin) {
+                        // Set Conflict Status
+                        return res.status(500).send("Server Error !!");
+                    } else {
+                        //  Set Ok Status
+                        return res.status(200).send(admin);
+                    }
+                    break;
+                // For User
+                case "user":
+                    // Check the email is already exists or not
+                    let user = await User.findOne({ _id: req.params.id });
+                    // If exists the email
+                    if (!user) {
+                        // Set Conflict Status
+                        return res.status(500).send("Server Error !!");
+                    } else {
+                        //  Set Ok Status
+                        return res.status(200).send(user);
+                    }
+                    break;
+                // For Doctor
+                case "doctor":
+                    // Check the email is already exists or not
+                    let doctor = await Doctor.findOne({ _id: req.params.id });
+                    // If exists the email
+                    // If exists the email
+                    if (!doctor) {
+                        // Set Conflict Status
+                        return res.status(500).send("Server Error !!");
+                    } else {
+                        //  Set Ok Status
+                        return res.status(200).send(doctor);
+                    }
+                    break;
+                default:
+                    //  Set Bad Request Status
+                    return res.status(400).send("Server Error !!");
+            }
+        }
+        else {
+            // Set Internal Server Error Status
+            return res.status(500).send("You can only view your own account !!");
         }
     } catch (error) {
         console.log(error);

@@ -3,7 +3,7 @@ import React from "react";
 
 /* ------------- React Router Dom ------------- */
 // Import Router,Route,Routes
-import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 /* ------------- Components ------------- */
 // Home Page
@@ -17,22 +17,14 @@ import AllChats from "../Components/AllChats/AllChats";
 import DiseasesChecker from "../Components/DiseasesChecker/DiseasesChecker";
 //AddMedicine
 import AddMedicine from "../Components/AddMedicine/AddMedicine";
+import AllMedicine from "../Components/AllMedicine/AllMedicine";
+import Navbar from "../Components/Navbar/Navbar";
 
-// Define a custom PrivateRoute component
-function PrivateRoute({ element, userType }) {
-  if (userType === "admin") {
-    return element;
-  } else {
-    // Redirect to the SignIn page if the user is not an admin
-    return <Navigate to="/signin" />;
-  }
-}
 const AppRouter = () => {
-  const userType = "admin";
-
   return (
     <>
       <Router>
+        <Navbar />
         <Routes>
           {/* Home Route */}
           <Route exact path="/" element={<Home />} />
@@ -40,10 +32,12 @@ const AppRouter = () => {
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/allchats" element={<AllChats />} />
           <Route exact path="/disease-checker" element={<DiseasesChecker />} />
-        <Route
-          path="/addmedicine"
-          element={<PrivateRoute element={<AddMedicine />} userType={userType} />}
-          />
+        </Routes>
+        <Routes>
+          <Route exact path="/allmedicine" element={<AllMedicine />} />
+        </Routes>
+        <Routes>
+          <Route path="/addmedicine" element={<AddMedicine />} />
         </Routes>
       </Router>
     </>
