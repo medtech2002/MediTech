@@ -18,6 +18,8 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
+  background-color: aliceblue;
+  border-right: 5px solid green;
 }
 
 .allChats .userChats::-webkit-scrollbar {
@@ -27,5 +29,17 @@
 .allChats .msgChats {
   width: 50%;
   height: 100vh;
-  background-color: rgb(15, 79, 134);
+  background-color: white;
+}
+
+.allChats .msgChats .jh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.allChats .msgChats .jh img {
+  margin: 150px 0 20px 0;
+  align-self: center;
 }

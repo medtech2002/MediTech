@@ -81,7 +81,7 @@ const Navbar = () => {
           // console.log(res.data);
           // Store the Username
           setUser(res.data);
-          localStorage.setItem("name",res.data.fullname)
+          localStorage.setItem("name", res.data.fullname);
         })
         .catch((err) => {
           Cookies.remove("token");
@@ -89,7 +89,7 @@ const Navbar = () => {
           Cookies.remove("type");
         });
     }
-  },[]);
+  });
 
   // Anchor UseState for Tooltip
   const [anchorEl, setAnchorEl] = useState(null);
@@ -132,7 +132,7 @@ const Navbar = () => {
   const navLinkStyle = ({ isActive }) => {
     return {
       background: isActive ? "linear-gradient(to right,#9e0bac, #1c0d9e" : "",
-      color: isActive ? "white" : "",
+      color: isActive ? "white" : "black",
     };
   };
 
@@ -333,7 +333,7 @@ const Navbar = () => {
                             <MenuItem
                               onClick={() => {
                                 handleClose();
-                                // navigate(`/dashboard/${username.id}`);
+                                navigate(`/dashboard`);
                               }}
                               sx={{
                                 color: "white",
@@ -357,7 +357,7 @@ const Navbar = () => {
                             <MenuItem
                               onClick={() => {
                                 handleClose();
-                                // navigate(`/all-notes/${username.id}`);
+                                navigate(`/allchats`);
                               }}
                               sx={{
                                 color: "white",
@@ -374,14 +374,14 @@ const Navbar = () => {
                                   fontSize="small"
                                 />
                               </ListItemIcon>
-                              Your Notes
+                              All Chats
                             </MenuItem>
 
-                            {/* Menu Item Add Notes*/}
+                              {/* Menu Item Notes*/}
                             <MenuItem
                               onClick={() => {
                                 handleClose();
-                                // navigate(`/add-notes/${username.id}`);
+                                navigate(`/allmedicine`);
                               }}
                               sx={{
                                 color: "white",
@@ -393,13 +393,45 @@ const Navbar = () => {
                               }}
                             >
                               <ListItemIcon>
-                                <NoteAddIcon
+                                <NotesIcon
                                   style={{ color: "white" }}
                                   fontSize="small"
                                 />
                               </ListItemIcon>
-                              Add Notes
+                              All Medicine
                             </MenuItem>
+                            
+
+                            {Cookies.get("type") === "admin" ? (
+                              <>
+                                <MenuItem
+                                  onClick={() => {
+                                    handleClose();
+                                    navigate(`/addmedicine`);
+                                  }}
+                                  sx={{
+                                    color: "white",
+                                    fontWeight: 500,
+                                    letterSpacing: "1px",
+                                    "&:hover": {
+                                      backgroundColor: "#0f000ac4 !important", // Change the background color on hover
+                                    },
+                                  }}
+                                >
+                                  <ListItemIcon>
+                                    <NotesIcon
+                                      style={{ color: "white" }}
+                                      fontSize="small"
+                                    />
+                                  </ListItemIcon>
+                                  Add Medcine
+                                </MenuItem>
+                              </>
+                            ) : (
+                              <></>
+                            )}
+
+                            {/* Menu Item Notes*/}
 
                             {/* Divider */}
                             <Divider style={{ backgroundColor: "white" }} />

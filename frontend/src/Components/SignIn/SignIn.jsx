@@ -57,7 +57,12 @@ function SignIn() {
         cookies.set("token", res.data.token);
         cookies.set("userid", res.data.userid);
         cookies.set("type", res.data.type);
-        alert("Login successfully");
+        // alert("Login successfully");
+        // setEmail(""),
+        // setPassword("");
+        // setUserType("user");
+        window.location.href="/dashboard"
+
       })
       .catch((error) => {
         console.error(error);
@@ -68,18 +73,18 @@ function SignIn() {
   return (
     <div
       style={{
-        background: "#F218AD",
-        minHeight: "100vh",
+        background: "white",
+        minHeight: "90vh",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       {/* Background container */}
       <Container
         component="main"
         maxWidth="lg"
-        sx={{ width: "57%", paddingRight: "65px", paddingLeft: "48px" }}
+        sx={{ width: "57%", paddingRight: "65px", paddingLeft: "48px",boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",borderRadius:"5px" }}
       >
         <CssBaseline />
         <Paper
@@ -99,7 +104,6 @@ function SignIn() {
             width="200"
             height="200"
             style={{
-              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
               marginRight: "20px",
             }}
           />
@@ -116,7 +120,8 @@ function SignIn() {
               <form>
                 <TextField
                   label="Email Address"
-                  variant="outlined"
+                  variant="filled"
+                  color="secondary"
                   fullWidth
                   required
                   value={email}
@@ -129,7 +134,8 @@ function SignIn() {
                 <TextField
                   label="Password"
                   type="password"
-                  variant="outlined"
+                  variant="filled"
+                  color="secondary"
                   fullWidth
                   required
                   value={password}
@@ -139,7 +145,7 @@ function SignIn() {
             </Grid>
             <Grid item xs={12}>
               {/* Dropdown menu for user type */}
-              <FormControl fullWidth variant="outlined">
+              <FormControl fullWidth variant="filled" color="secondary">
                 <InputLabel id="user-type-label">User Type</InputLabel>
                 <Select
                   labelId="user-type-label"
@@ -156,15 +162,24 @@ function SignIn() {
             <Grid item xs={12}>
               <Button
                 variant="contained"
-                fullWidth
                 size="large"
                 color="primary"
                 type="submit"
                 onClick={handleSignIn}
+                sx={{
+                  mt:2,
+                  mb:2
+                }}
               >
                 Log in
               </Button>
-              <Link to="/signup" className="m-2">
+              <br/>
+              <Link to="/signup" className="my-2"
+                style={{
+                  textDecoration:"none",
+                  color:"black"
+                }}
+              >
                 Not a User Register Here
               </Link>
             </Grid>

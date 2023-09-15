@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 // AllChats CSS
 import "./AllChats.css";
+import c from "./download.jpeg";
 
 /* ------------- Components ------------- */
 // Chat Component
@@ -33,6 +34,7 @@ import Button from "@mui/material/Button";
 import VideoCall from "../VideoCall/VideoCall";
 
 const AllChats = () => {
+  const navigate = useNavigate();
   const [perUserChat, setPerUserChat] = useState();
 
   // UseEffect for Loading Chats and also create chats
@@ -77,12 +79,14 @@ const AllChats = () => {
                   key={pc.chat_id}
                   sx={{
                     width: "200px",
+                    height: "250px",
                     m: 2,
                     p: 1,
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     flexDirection: "column",
+                    boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                   }}
                 >
                   {/* Oponent User Logo */}
@@ -139,6 +143,13 @@ const AllChats = () => {
         <div className="msgChats">
           {det && <Chat data={det} />}
           {vid && <VideoCall vid={vid} />}
+
+          {!det & !vid && (
+            <div className="jh">
+              <img src={c} alt="" />
+              <h3>Start Your Chat</h3>
+            </div>
+          )}
         </div>
       </div>
     </>

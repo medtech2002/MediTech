@@ -19,6 +19,8 @@ import DiseasesChecker from "../Components/DiseasesChecker/DiseasesChecker";
 import AddMedicine from "../Components/AddMedicine/AddMedicine";
 import AllMedicine from "../Components/AllMedicine/AllMedicine";
 import Navbar from "../Components/Navbar/Navbar";
+import VideoCall from "../Components/VideoCall/VideoCall";
+import Dashboard from "../Components/Dashboard/Dashboard";
 
 const AppRouter = () => {
   return (
@@ -31,7 +33,7 @@ const AppRouter = () => {
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/allchats" element={<AllChats />} />
-          <Route exact path="/disease-checker" element={<DiseasesChecker />} />
+          {/* <Route exact path="/disease-checker" element={<DiseasesChecker />} /> */}
         </Routes>
         <Routes>
           <Route exact path="/allmedicine" element={<AllMedicine />} />
@@ -39,6 +41,12 @@ const AppRouter = () => {
         <Routes>
           <Route path="/addmedicine" element={<AddMedicine />} />
         </Routes>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+        {/* <Routes>
+          <Route path="/videochat/:id" element={<VideoCall />} />
+        </Routes> */}
       </Router>
     </>
   );
