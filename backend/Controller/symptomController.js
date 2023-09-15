@@ -7,6 +7,8 @@ const router = new express.Router();
 const AllSymptom = require("../Model/allsymptom");
 // Import Symptom Collection/Model
 const Symptom = require("../Model/symptoms");
+// Import Symptom Collection/Model
+const Ayur = require("../Model/ayurvedic");
 // Import Authentication
 const auth = require('../Middleware/auth');
 

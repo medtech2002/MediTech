@@ -1,0 +1,349 @@
+[
+  {
+    "name": "Punarnavadi Kashaya",
+    "description": "A decoction used in cases of inflammatory conditions throughout the body.",
+    "ingredients": [
+      {
+        "name": "Punarnava",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Ruksha (Dry)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      },
+      {
+        "name": "Guduchi",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Snigdha (Oily)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": [
+        "Inflammatory Conditions",
+        "Fever",
+        "Digestive Disorders"
+      ],
+      "Contraindications": ["Diabetics", "Patients with alcohol intolerance"]
+    },
+    "source": "Reference Text 1",
+    "synonyms": ["Punarnavadi Kwath", "Punarnavadi Decoction"]
+  },
+  {
+    "name": "Vyaghryadi Kashaya",
+    "description": "A decoction used in cases of upper respiratory tract infections like common cold.",
+    "ingredients": [
+      {
+        "name": "Vyaghri",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Katu (Pungent)",
+          "Guna": "Laghu (Light), Teekshna (Sharp)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      },
+      {
+        "name": "Trikatu",
+        "category": "Formulation",
+        "properties": {
+          "Rasa": "Katu (Pungent)",
+          "Guna": "Laghu (Light), Teekshna (Sharp)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": [
+        "Common Cold (Pinasa)",
+        "Upper Respiratory Tract Infections",
+        "Cough and Cold"
+      ],
+      "Contraindications": [
+        "Patients with digestive disorders",
+        "Patients with heat-related conditions"
+      ]
+    },
+    "source": "Reference Text 2",
+    "synonyms": ["Vyaghryadi Kwath", "Vyaghryadi Decoction"]
+  },
+  {
+    "name": "Amritarishta",
+    "description": "A fermented herbal tonic used for overall well-being and immunity boost.",
+    "ingredients": [
+      {
+        "name": "Giloy",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Snigdha (Oily)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      },
+      {
+        "name": "Ashwagandha",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Snigdha (Oily)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": [
+        "Immunity Boost",
+        "General Health Tonic",
+        "Stress Management"
+      ],
+      "Contraindications": ["None known"]
+    },
+    "source": "Ayurveda Text 3",
+    "synonyms": ["Amritarishta Tonic"]
+  },
+  {
+    "name": "Triphala Churna",
+    "description": "A herbal powder blend used for digestive health and detoxification.",
+    "ingredients": [
+      {
+        "name": "Haritaki",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Katu (Pungent)",
+          "Guna": "Laghu (Light), Teekshna (Sharp)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      },
+      {
+        "name": "Amla",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Madhura (Sweet), Amla (Sour)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": ["Constipation", "Digestive Disorders", "Detoxification"],
+      "Contraindications": ["Chronic diarrhea", "Dehydration"]
+    },
+    "source": "Ayurveda Text 4",
+    "synonyms": ["Triphala Powder"]
+  },
+  {
+    "name": "Brahmi Ghrita",
+    "description": "A medicated ghee preparation used for improving memory and cognitive function.",
+    "ingredients": [
+      {
+        "name": "Brahmi",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      },
+      {
+        "name": "Ghee",
+        "category": "Medium",
+        "properties": {
+          "Rasa": "Madhura (Sweet)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": ["Memory Enhancement", "Cognitive Function", "Anxiety"],
+      "Contraindications": ["None known"]
+    },
+    "source": "Ayurveda Text 5",
+    "synonyms": ["Brahmi Ghee"]
+  },
+  {
+    "name": "Chyawanprash",
+    "description": "A herbal jam known for its immunity-boosting properties and overall health benefits.",
+    "ingredients": [
+      {
+        "name": "Amla",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Madhura (Sweet), Amla (Sour)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      },
+      {
+        "name": "Ashwagandha",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Snigdha (Oily)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": [
+        "Immunity Boost",
+        "General Health Tonic",
+        "Respiratory Health"
+      ],
+      "Contraindications": ["Diabetes", "Obesity"]
+    },
+    "source": "Ayurveda Text 6",
+    "synonyms": ["Chyawanprash Jam"]
+  },
+  {
+    "name": "Kutajarishta",
+    "description": "A fermented herbal tonic used for treating diarrhea and digestive disorders.",
+    "ingredients": [
+      {
+        "name": "Kutaja",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Teekshna (Sharp)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      },
+      {
+        "name": "Dhataki",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Madhura (Sweet), Kashaya (Astringent)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": ["Diarrhea", "Gastrointestinal Disorders", "Dysentery"],
+      "Contraindications": ["Constipation", "Pregnancy"]
+    },
+    "source": "Ayurveda Text 7",
+    "synonyms": ["Kutajarishta Tonic"]
+  },
+  {
+    "name": "Shatavari Churna",
+    "description": "A powdered formulation used for promoting women's health and hormonal balance.",
+    "ingredients": [
+      {
+        "name": "Shatavari",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Madhura (Sweet)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      },
+      {
+        "name": "Ashoka",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Kashaya (Astringent), Tikta (Bitter)",
+          "Guna": "Laghu (Light), Ruksha (Dry)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": [
+        "Women's Health",
+        "Menstrual Disorders",
+        "Hormonal Balance"
+      ],
+      "Contraindications": ["Pregnancy", "Excessive coldness"]
+    },
+    "source": "Ayurveda Text 8",
+    "synonyms": ["Shatavari Powder"]
+  },
+  {
+    "name": "Bilva Avaleha",
+    "description": "A herbal jam used for digestive disorders and to relieve abdominal pain.",
+    "ingredients": [
+      {
+        "name": "Bilva",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Madhura (Sweet), Kashaya (Astringent)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Sheeta (Cool)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      },
+      {
+        "name": "Ginger",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Katu (Pungent)",
+          "Guna": "Laghu (Light), Teekshna (Sharp)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": ["Digestive Disorders", "Abdominal Pain", "Indigestion"],
+      "Contraindications": ["Diabetes", "Acidity"]
+    },
+    "source": "Ayurveda Text 9",
+    "synonyms": ["Bilva Leha", "Bael Jam"]
+  },
+  {
+    "name": "Gokshuradi Guggulu",
+    "description": "A traditional Ayurvedic tablet used for urinary and reproductive system health.",
+    "ingredients": [
+      {
+        "name": "Gokshura",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Madhura (Sweet), Tikta (Bitter)",
+          "Guna": "Guru (Heavy), Snigdha (Oily)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Madhura (Sweet)"
+        }
+      },
+      {
+        "name": "Guggulu",
+        "category": "Herb",
+        "properties": {
+          "Rasa": "Tikta (Bitter)",
+          "Guna": "Laghu (Light), Ruksha (Dry)",
+          "Virya": "Ushna (Hot)",
+          "Vipaka": "Katu (Pungent)"
+        }
+      }
+    ],
+    "use_cases": {
+      "DiseaseNames": [
+        "Urinary Disorders",
+        "Reproductive Health",
+        "Kidney Stones"
+      ],
+      "Contraindications": ["Pregnancy", "Chronic constipation"]
+    },
+    "source": "Ayurveda Text 10",
+    "synonyms": ["Gokshura Guggulu"]
+  }
+]

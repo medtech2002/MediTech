@@ -47,20 +47,17 @@ const DiseasesChecker = () => {
 
       if (token && userid) {
         axios
-          .post(
-            `${baseUrl}/api/symptoms/symptom-find/${userid}`,
-            { symptoms: symptoms },
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          )
+          .post(`${baseUrl}/api/symptoms/symptom-find/${userid}`, symptoms, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
           .then((res) => {
             // Handle the response and update the state
-            if (Array.isArray(res.data)) {
-              setLastSymptom(res.data[res.data.length - 1]);
-            }
+            // if (Array.isArray(res.data)) {
+            //   setLastSymptom(res.data[res.data.length - 1]);
+            // }
+            console.log(res.data);
           })
           .catch((err) => {
             console.error(err);
@@ -105,28 +102,30 @@ const DiseasesChecker = () => {
     setSym2(selectedSymptom2);
     setSym3(""); // Clear sym3 when sym2 changes
     setLastSymptom(""); // Clear lastSymptom when sym2 changes
-  
+
     // Check if selectedSymptom2 is the second last symptom in the array
-    const isSecondLastSymptom = allSymptom.length > 1 && allSymptom[allSymptom.length - 2].symptom === selectedSymptom2;
-  
+    const isSecondLastSymptom =
+      allSymptom.length > 1 &&
+      allSymptom[allSymptom.length - 2].symptom === selectedSymptom2;
+
     if (isSecondLastSymptom) {
       // If selectedSymptom2 is the second last symptom, automatically populate symptom 4
       const lastSymptomValue = allSymptom[allSymptom.length - 1].symptom;
       setSym3(lastSymptomValue);
       setLastSymptom(lastSymptomValue);
     }
-  
+
     // Make an API call to fetch available symptoms for sym3 based on selectedSymptom1 and selectedSymptom2
     try {
       const token = Cookies.get("token");
       const userid = Cookies.get("userid");
-  
+
       if (token && userid) {
         const response = await axios.post(
           `${baseUrl}/api/symptoms/symptom-find/${userid}`,
           { selectedSymptom1: sym1, selectedSymptom2 }
         );
-  
+
         if (Array.isArray(response.data)) {
           const availableSymptoms3 = response.data;
           setAvailableSymptoms3(availableSymptoms3);
@@ -232,4 +231,3 @@ const DiseasesChecker = () => {
 };
 
 export default DiseasesChecker;
-
