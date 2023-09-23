@@ -33,7 +33,7 @@ const AppRouter = () => {
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/allchats" element={<AllChats />} />
-          {/* <Route exact path="/disease-checker" element={<DiseasesChecker />} /> */}
+          <Route exact path="/disease-checker" element={<DiseasesChecker />} />
         </Routes>
         <Routes>
           <Route exact path="/allmedicine" element={<AllMedicine />} />

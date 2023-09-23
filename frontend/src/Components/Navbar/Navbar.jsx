@@ -186,7 +186,7 @@ const Navbar = () => {
                     {
                       // Check the User is set or not
                       user ? (
-                        <>
+                        <React.Fragment>
                           {/* If Yes then so the Tooltip Box*/}
                           <Box
                             sx={{
@@ -253,7 +253,7 @@ const Navbar = () => {
                             open={open}
                             onClose={handleClose}
                             onClick={handleClose}
-                            PaperProps={{
+                            MenuListProps={{
                               elevation: 0,
                               sx: {
                                 overflow: "visible",
@@ -462,7 +462,7 @@ const Navbar = () => {
                               Logout
                             </MenuItem>
                           </Menu>
-                        </>
+                        </React.Fragment>
                       ) : (
                         <>
                           {/* if Not then Show the Skeleton Box */}
