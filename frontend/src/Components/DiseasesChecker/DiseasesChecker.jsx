@@ -1,5 +1,6 @@
 // React & UseState & UseEffect
 import React, { useState, useEffect } from "react";
+import "./DiseasesChecker.css";
 import axios from "axios";
 import Cookies from "js-cookie";
 import baseUrl from "../../Helper/BaseUrl";
@@ -8,6 +9,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Button } from "@mui/material";
 
 const DiseasesChecker = () => {
   const [allSymptom, setAllSymptom] = useState([]);
@@ -51,8 +53,7 @@ const DiseasesChecker = () => {
     setSym2("");
     setSym3("");
     setSym4("");
-    setAvailableSymptoms3([])
-    setAvailableSymptoms4([])
+    setAvailableSymptoms3([]);
     setOn(false);
 
     const token = Cookies.get("token");
@@ -84,8 +85,7 @@ const DiseasesChecker = () => {
     setSym2(selectedSymptom2);
     setSym3("");
     setSym4("");
-    setAvailableSymptoms3([])
-    setAvailableSymptoms4([])
+    setAvailableSymptoms3([]);
     setOn(false);
 
     const token = Cookies.get("token");
@@ -120,7 +120,6 @@ const DiseasesChecker = () => {
     const selectedSymptom3 = e.target.value;
     setSym3(selectedSymptom3);
     setSym4("");
-    setAvailableSymptoms4([])
     setOn(false);
 
     const token = Cookies.get("token");
@@ -155,11 +154,54 @@ const DiseasesChecker = () => {
     setDuration(e.target.value);
   };
 
+  const handleSubmitDisease = () => {
+    const token = Cookies.get("token");
+    const userid = Cookies.get("userid");
+
+    if (
+      (sym1 !== "") & (sym2 !== "") &&
+      (sym3 !== "" || sym4 !== "") &&
+      duration !== "" &&
+      token &&
+      userid
+    ) {
+      axios
+        .post(
+          `${baseUrl}/api/symptoms/suggest-med/${userid}`,
+          { symptoms: [sym1, sym2, sym3, sym4], durations: duration },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
   return (
     <>
       <div className="box">
-        <Box sx={{ width: "500px" }}>
-          <FormControl fullWidth>
+        <Box
+          sx={{
+            width: "500px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <FormControl
+            fullWidth
+            sx={{
+              m: 2,
+            }}
+          >
             <InputLabel id="symptom1-label">Symptom 1</InputLabel>
             <Select
               labelId="symptom1-label"
@@ -167,6 +209,8 @@ const DiseasesChecker = () => {
               value={sym1}
               label="Symptom 1"
               onChange={handleChangeSym1}
+              color="secondary"
+              variant="outlined"
             >
               {allSymptom.map((as) => (
                 <MenuItem key={as._id} value={as.symptom}>
@@ -176,63 +220,94 @@ const DiseasesChecker = () => {
             </Select>
           </FormControl>
 
-          {sym1 && (
-            <FormControl fullWidth>
-              <InputLabel id="symptom2-label">Symptom 2</InputLabel>
-              <Select
-                labelId="symptom2-label"
-                id="symptom2"
-                value={sym2}
-                label="Symptom 2"
-                onChange={handleChangeSym2}
-              >
-                {availableSymptoms2.map((as, i) => (
-                  <MenuItem key={i} value={as}>
-                    {as}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          )}
+          <FormControl
+            fullWidth
+            sx={{
+              m: 2,
+            }}
+          >
+            <InputLabel id="symptom2-label">Symptom 2</InputLabel>
+            <Select
+              disabled={sym1 ? false : true}
+              labelId="symptom2-label"
+              id="symptom2"
+              value={sym2}
+              label="Symptom 2"
+              onChange={handleChangeSym2}
+              color="warning"
+              variant="outlined"
+            >
+              {availableSymptoms2.map((as, i) => (
+                <MenuItem key={i} value={as}>
+                  {as}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
 
-          {availableSymptoms3.length !== 0 &&
-            availableSymptoms3.length !== 1 && (
-              <FormControl fullWidth>
-                <InputLabel id="symptom3-label">Symptom 3</InputLabel>
-                <Select
-                  labelId="symptom3-label"
-                  id="symptom3"
-                  value={sym3}
-                  label="Symptom 3"
-                  onChange={handleChangeSym3}
-                >
-                  {availableSymptoms3.map((as, i) => (
-                    <MenuItem key={i} value={as}>
-                      {as}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            )}
+          <FormControl
+            fullWidth
+            sx={{
+              m: 2,
+            }}
+          >
+            <InputLabel id="symptom3-label">Symptom 3</InputLabel>
+            <Select
+              disabled={
+                availableSymptoms3.length !== 0 &&
+                availableSymptoms3.length !== 1
+                  ? false
+                  : true
+              }
+              labelId="symptom3-label"
+              id="symptom3"
+              value={sym3}
+              label="Symptom 3"
+              onChange={handleChangeSym3}
+              color="error"
+              variant="outlined"
+            >
+              {availableSymptoms3.map((as, i) => (
+                <MenuItem key={i} value={as}>
+                  {as}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
 
-          {on && (
-            <FormControl fullWidth>
-              <InputLabel id="duration-label">Duration</InputLabel>
-              <Select
-                labelId="duration-label"
-                id="duration"
-                value={duration}
-                label="Duration"
-                onChange={handleChangeDuration}
-              >
-                {/* Add duration options */}
-                <MenuItem value="1">3 days to 1 week</MenuItem>
-                <MenuItem value="2">3 days to 2 weeks</MenuItem>
-                <MenuItem value="3">3 days to 3 weeks</MenuItem>
-                <MenuItem value="4">1 month</MenuItem>
-              </Select>
-            </FormControl>
-          )}
+          <FormControl
+            fullWidth
+            sx={{
+              m: 2,
+            }}
+          >
+            <InputLabel id="duration-label">Duration</InputLabel>
+            <Select
+              disabled={on ? false : true}
+              labelId="duration-label"
+              id="duration"
+              value={duration}
+              label="Duration"
+              onChange={handleChangeDuration}
+            >
+              {/* Add duration options */}
+              <MenuItem value="3 days to 1 week">3 days to 1 week</MenuItem>
+              <MenuItem value="3 days to 2 weeks">3 days to 2 weeks</MenuItem>
+              <MenuItem value="3 days to 3 weeks">3 days to 3 weeks</MenuItem>
+              <MenuItem value="1 month">1 month or more than</MenuItem>
+            </Select>
+          </FormControl>
+
+          <Button
+            color="success"
+            variant="contained"
+            onClick={handleSubmitDisease}
+            sx={{
+              m:2
+            }}
+          >
+            Submit
+          </Button>
         </Box>
       </div>
     </>

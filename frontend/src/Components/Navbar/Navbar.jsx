@@ -89,7 +89,7 @@ const Navbar = () => {
           Cookies.remove("type");
         });
     }
-  });
+  },[]);
 
   // Anchor UseState for Tooltip
   const [anchorEl, setAnchorEl] = useState(null);

@@ -99,6 +99,10 @@ router.post("/suggest-med/:id", auth, async (req, res) => {
             // Get the symptoms from the request body
             const { symptoms, durations } = req.body;
 
+            if(symptoms[3]===""){
+                symptoms.pop();
+            }
+            
             // Find Symptoms
             const disease = await Symptom.find();
 
